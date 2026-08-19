@@ -1,0 +1,10 @@
+.deck-shell h1,
+.deck-shell h2,
+.portal-header h1,
+.overview-heading h1 {
+  letter-spacing: -0.045em;
+}
+
+.lesson-card h2 {
+  letter-spacing: -0.035em;
+}

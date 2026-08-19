@@ -1,0 +1,23 @@
+.pillar-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 0.55em;
+  max-width: 980px;
+  color: var(--muted);
+  font-size: clamp(24px, 3vw, 44px);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+.pillar-summary span:not(:last-child)::after {
+  content: "·";
+  margin-left: 0.55em;
+  color: rgba(216, 255, 95, 0.72);
+}
+
+@media (max-width: 620px) {
+  .pillar-summary {
+    font-size: clamp(22px, 7.5vw, 32px);
+    line-height: 1.3;
+  }
+}
