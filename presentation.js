@@ -1,6 +1,26 @@
 const deck = document.querySelector('.deck')
 const applePaperFigure = new URL('./assets/research/apple-illusion-of-thinking-figure.png', import.meta.url).href
 
+const contextPattern = [
+  ...Array(20).fill('correct'),
+  'error', 'correct', 'correct', 'correct',
+  'error', 'correct', 'correct', 'error', 'correct', 'error',
+  'correct', 'correct', 'error', 'error', 'correct', 'error',
+  'correct', 'error', 'error', 'correct', 'error', 'error', 'error', 'correct', 'error',
+]
+
+function contextTokenMarkup(state, index) {
+  const isError = state === 'error'
+  const icon = isError
+    ? '<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>'
+    : '<path d="m20 6-11 11-5-5"></path>'
+
+  return `
+    <span class="context-token ${isError ? 'is-error' : 'is-correct'}" aria-label="${isError ? 'Error' : 'Paso correcto'} ${index + 1}">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${icon}</svg>
+    </span>`
+}
+
 function modesMarkup(unlockedCount, heading, emphasis) {
   const modes = [
     ['Conversacional', 'Preguntar y responder'],
@@ -72,20 +92,41 @@ const remainingSlides = [
     id: 'slide-15',
     className: 'slide--light-extension',
     theme: 'light',
-    label: 'Cada paso depende de los anteriores',
+    label: 'La ventana de contexto se condiciona al error',
     html: `
       <div class="slide__inner process-layout">
         <div class="process-heading">
           <p class="section-kicker">El problema multi-step</p>
           <h2>Cada paso depende de <em>los anteriores.</em></h2>
         </div>
-        <ol class="process-chain" aria-label="Cadena de trabajo de múltiples pasos">
-          <li><span>01</span><strong>Decidir</strong></li>
-          <li><span>02</span><strong>Actuar</strong></li>
-          <li><span>03</span><strong>Observar</strong></li>
-          <li><span>04</span><strong>Volver a decidir</strong></li>
-        </ol>
-        <p class="process-note">Un error temprano puede alterar todas las decisiones siguientes.</p>
+        <div class="context-demo" data-context-demo>
+          <header class="context-demo__header">
+            <div>
+              <span>Ventana de contexto</span>
+              <small><output data-context-time>00</output> / 15 s</small>
+            </div>
+            <div class="context-controls" aria-label="Controles de la animación">
+              <button type="button" data-context-toggle data-context-control aria-label="Pausar animación">
+                <svg class="context-control__pause" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="4" height="16" x="6" y="4" rx="1"></rect><rect width="4" height="16" x="14" y="4" rx="1"></rect></svg>
+                <svg class="context-control__play" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 14 9-14 9z"></path></svg>
+              </button>
+              <button type="button" data-context-restart data-context-control aria-label="Reiniciar animación">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>
+              </button>
+            </div>
+          </header>
+          <div class="context-window" data-context-window>
+            <div class="context-belt" data-context-belt>
+              ${contextPattern.map(contextTokenMarkup).join('')}
+            </div>
+          </div>
+          <div class="context-demo__footer">
+            <span>Contexto limpio</span>
+            <i><b data-context-progress></b></i>
+            <span>Errores acumulados</span>
+          </div>
+        </div>
+        <p class="process-note">Un error temprano condiciona los pasos siguientes.</p>
       </div>`,
   },
   {
@@ -461,6 +502,16 @@ const newsCanvas = newsSlide.querySelector('.news-canvas')
 const newsClips = [...newsSlide.querySelectorAll('[data-news-step]')]
 const newsProgress = newsSlide.querySelector('.news-progress')
 const newsSlideIndex = slides.indexOf(newsSlide)
+const contextSlide = document.querySelector('#slide-15')
+const contextSlideIndex = slides.indexOf(contextSlide)
+const contextDemo = contextSlide.querySelector('[data-context-demo]')
+const contextWindow = contextDemo.querySelector('[data-context-window]')
+const contextBelt = contextDemo.querySelector('[data-context-belt]')
+const contextProgress = contextDemo.querySelector('[data-context-progress]')
+const contextTime = contextDemo.querySelector('[data-context-time]')
+const contextToggle = contextDemo.querySelector('[data-context-toggle]')
+const contextRestart = contextDemo.querySelector('[data-context-restart]')
+const contextDuration = 15000
 
 const burstPlacements = [
   [5, 8, 28, -4], [54, 6, 29, 3], [30, 35, 31, -2], [3, 48, 30, 2],
@@ -478,6 +529,105 @@ let wheelLocked = false
 let isNewsBursting = false
 let burstTimer = null
 let burstCleanupTimer = null
+let contextAnimations = []
+let contextWasActive = false
+let contextFrame = null
+
+function stopContextClock() {
+  if (contextFrame) window.cancelAnimationFrame(contextFrame)
+  contextFrame = null
+}
+
+function syncContextClock() {
+  stopContextClock()
+  const animation = contextAnimations[0]
+  const elapsed = Math.min(contextDuration, Math.max(0, Number(animation?.currentTime) || 0))
+  contextTime.textContent = String(Math.floor(elapsed / 1000)).padStart(2, '0')
+
+  if (animation?.playState === 'running') {
+    contextFrame = window.requestAnimationFrame(syncContextClock)
+  }
+}
+
+function syncContextControl() {
+  const animation = contextAnimations[0]
+  const isRunning = animation?.playState === 'running'
+  const isFinished = animation?.playState === 'finished'
+  contextDemo.classList.toggle('is-paused', !isRunning)
+  contextDemo.classList.toggle('is-complete', isFinished)
+  contextToggle.setAttribute('aria-label', isFinished ? 'Reproducir animación nuevamente' : isRunning ? 'Pausar animación' : 'Continuar animación')
+}
+
+function cancelContextAnimations() {
+  stopContextClock()
+  contextAnimations.forEach((animation) => animation.cancel())
+  contextAnimations = []
+}
+
+function restartContextAnimation(shouldPlay = true) {
+  cancelContextAnimations()
+
+  const windowStyles = window.getComputedStyle(contextWindow)
+  const horizontalPadding = parseFloat(windowStyles.paddingLeft) + parseFloat(windowStyles.paddingRight)
+  const visibleWidth = contextWindow.clientWidth - horizontalPadding
+  const travel = Math.max(0, contextBelt.scrollWidth - visibleWidth)
+  const timing = { duration: contextDuration, easing: 'linear', fill: 'forwards' }
+
+  const beltAnimation = contextBelt.animate(
+    [{ transform: 'translate3d(0, 0, 0)' }, { transform: `translate3d(-${travel}px, 0, 0)` }],
+    timing,
+  )
+  const progressAnimation = contextProgress.animate(
+    [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+    timing,
+  )
+
+  contextAnimations = [beltAnimation, progressAnimation]
+  beltAnimation.addEventListener('finish', () => {
+    contextTime.textContent = '15'
+    syncContextControl()
+    stopContextClock()
+  }, { once: true })
+
+  if (!shouldPlay) contextAnimations.forEach((animation) => animation.pause())
+  syncContextControl()
+  syncContextClock()
+}
+
+function syncContextPlayback(index) {
+  const isActive = index === contextSlideIndex
+
+  if (isActive && !contextWasActive) {
+    restartContextAnimation(true)
+  } else if (!isActive && contextWasActive) {
+    contextAnimations.forEach((animation) => animation.pause())
+    syncContextControl()
+    syncContextClock()
+  }
+
+  contextWasActive = isActive
+}
+
+contextToggle.addEventListener('click', (event) => {
+  event.stopPropagation()
+  const animation = contextAnimations[0]
+
+  if (!animation || animation.playState === 'finished') {
+    restartContextAnimation(true)
+  } else if (animation.playState === 'running') {
+    contextAnimations.forEach((item) => item.pause())
+  } else {
+    contextAnimations.forEach((item) => item.play())
+  }
+
+  syncContextControl()
+  syncContextClock()
+})
+
+contextRestart.addEventListener('click', (event) => {
+  event.stopPropagation()
+  restartContextAnimation(true)
+})
 
 function clamp(index) {
   return Math.max(0, Math.min(index, slides.length - 1))
@@ -632,7 +782,11 @@ const observer = new IntersectionObserver(
       .filter((entry) => entry.isIntersecting)
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
 
-    if (visible) syncNavigation(Number(visible.target.dataset.slideIndex))
+    if (visible) {
+      const visibleIndex = Number(visible.target.dataset.slideIndex)
+      syncNavigation(visibleIndex)
+      syncContextPlayback(visibleIndex)
+    }
   },
   { root: deck, threshold: [0.45, 0.65, 0.85] },
 )
@@ -649,6 +803,8 @@ previousButton.addEventListener('click', retreat)
 nextButton.addEventListener('click', advance)
 
 window.addEventListener('keydown', (event) => {
+  if (event.target instanceof Element && event.target.closest('[data-context-control]')) return
+
   const forward = ['ArrowDown', 'ArrowRight', 'PageDown', ' ', 'Enter'].includes(event.key)
   const backward = ['ArrowUp', 'ArrowLeft', 'PageUp', 'Backspace'].includes(event.key)
 

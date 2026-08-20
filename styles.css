@@ -1595,7 +1595,7 @@ body.is-light-slide .navigation-buttons button {
   display: grid;
   grid-template-rows: 1fr auto auto;
   min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
-  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(3.8rem, 6vw, 5.5rem) 0;
+  padding: clamp(4rem, 6vw, 5.5rem) clamp(3rem, 7vw, 7rem) clamp(3.8rem, 6vw, 5.5rem) 0;
 }
 
 .process-heading {
@@ -1688,6 +1688,199 @@ body.is-light-slide .navigation-buttons button {
   margin: 0;
   color: rgba(36, 35, 41, 0.5);
   font-size: 0.86rem;
+}
+
+.context-demo {
+  position: relative;
+  width: min(100%, 66rem);
+  margin: 0 0 1rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  overflow: hidden;
+  border: 1px solid rgba(128, 102, 234, 0.22);
+  color: #d7dbe0;
+  background:
+    linear-gradient(rgba(128, 102, 234, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 102, 234, 0.035) 1px, transparent 1px),
+    #0d1117;
+  background-size: 3rem 3rem;
+  box-shadow: 0 1.5rem 4rem rgba(18, 19, 24, 0.12);
+}
+
+.context-demo__header,
+.context-demo__header > div,
+.context-controls,
+.context-demo__footer {
+  display: flex;
+  align-items: center;
+}
+
+.context-demo__header {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.context-demo__header > div:first-child {
+  gap: 0.8rem;
+}
+
+.context-demo__header span,
+.context-demo__header small,
+.context-demo__footer span {
+  font-size: 0.55rem;
+  font-weight: 720;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.context-demo__header span {
+  color: #f0f2f5;
+}
+
+.context-demo__header small,
+.context-demo__footer span {
+  color: rgba(215, 219, 224, 0.42);
+}
+
+.context-demo__header output {
+  color: #8d78ee;
+  font-variant-numeric: tabular-nums;
+}
+
+.context-controls {
+  gap: 0.35rem;
+}
+
+.context-controls button {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(215, 219, 224, 0.14);
+  border-radius: 50%;
+  color: rgba(215, 219, 224, 0.62);
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.context-controls button:hover,
+.context-controls button:focus-visible {
+  border-color: rgba(128, 102, 234, 0.65);
+  color: #fff;
+  background: rgba(128, 102, 234, 0.12);
+  outline: none;
+}
+
+.context-controls svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.context-control__play,
+.context-demo.is-paused .context-control__pause {
+  display: none;
+}
+
+.context-demo.is-paused .context-control__play {
+  display: block;
+}
+
+.context-window {
+  --context-cell: 3.25rem;
+  --context-gap: 0.6rem;
+  position: relative;
+  width: min(100%, calc((var(--context-cell) * 10) + (var(--context-gap) * 9) + 3.2rem));
+  margin: clamp(1.05rem, 2.5vh, 1.65rem) auto 0.8rem;
+  padding: 1rem 1.6rem;
+  overflow: hidden;
+  border: 1px solid rgba(119, 132, 150, 0.16);
+  border-radius: 999px;
+  background: rgba(19, 26, 35, 0.96);
+  box-shadow:
+    inset 0 0 0 1rem rgba(255, 255, 255, 0.012),
+    0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.context-window::before {
+  content: "";
+  position: absolute;
+  inset: 0.55rem;
+  z-index: 2;
+  border: 1px dashed rgba(128, 102, 234, 0.2);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.context-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(90deg, #131a23 0, transparent 9%, transparent 91%, #131a23 100%);
+  pointer-events: none;
+}
+
+.context-belt {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: max-content;
+  gap: var(--context-gap);
+  will-change: transform;
+}
+
+.context-token {
+  display: grid;
+  flex: 0 0 var(--context-cell);
+  width: var(--context-cell);
+  height: var(--context-cell);
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.context-token svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.context-token.is-correct {
+  color: #31e98b;
+  border-color: rgba(49, 233, 139, 0.25);
+  box-shadow: inset 0 0 1.1rem rgba(49, 233, 139, 0.08), 0 0 1.1rem rgba(49, 233, 139, 0.08);
+  text-shadow: 0 0 0.65rem #31e98b;
+}
+
+.context-token.is-error {
+  color: #ff5265;
+  border-color: rgba(255, 82, 101, 0.3);
+  box-shadow: inset 0 0 1.1rem rgba(255, 82, 101, 0.1), 0 0 1.2rem rgba(255, 82, 101, 0.12);
+  text-shadow: 0 0 0.65rem #ff5265;
+}
+
+.context-demo__footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.9rem;
+}
+
+.context-demo__footer i {
+  align-self: center;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(215, 219, 224, 0.14);
+}
+
+.context-demo__footer i b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #31e98b 0 34%, #ff5265 72% 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
 }
 
 .simple-task-layout {
@@ -2979,6 +3172,44 @@ body.is-light-slide .navigation-buttons button {
     text-align: left;
   }
 
+  .context-demo {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .context-demo__header > div:first-child {
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  .context-demo__header span,
+  .context-demo__header small,
+  .context-demo__footer span {
+    font-size: 0.46rem;
+  }
+
+  .context-controls button {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .context-window {
+    --context-cell: 2.45rem;
+    --context-gap: 0.4rem;
+    width: min(100%, calc((var(--context-cell) * 6) + (var(--context-gap) * 5) + 2.2rem));
+    margin-top: 0.75rem;
+    padding: 0.7rem 1.1rem;
+  }
+
+  .context-token svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .context-demo__footer {
+    gap: 0.55rem;
+  }
+
   .process-chain,
   .harness-loop,
   .full-system-flow {
@@ -3319,6 +3550,67 @@ body.is-light-slide .navigation-buttons button {
 
   .paper-evidence figcaption a {
     display: none;
+  }
+
+  .process-layout {
+    grid-template-columns: minmax(0, 0.72fr) minmax(25rem, 1.28fr);
+    grid-template-rows: 1fr auto;
+    gap: 0.6rem 2rem;
+    align-items: center;
+    min-height: calc(100dvh - 5.2rem);
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .process-heading {
+    grid-row: 1 / 3;
+  }
+
+  .process-heading h2 {
+    max-width: 9ch;
+    font-size: clamp(2.4rem, 5.7vw, 3.05rem);
+  }
+
+  .context-demo {
+    margin: 0;
+    padding: 0.7rem;
+  }
+
+  .context-demo__header span,
+  .context-demo__header small,
+  .context-demo__footer span {
+    font-size: 0.42rem;
+  }
+
+  .context-controls button {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+
+  .context-window {
+    --context-cell: 2rem;
+    --context-gap: 0.35rem;
+    width: min(100%, calc((var(--context-cell) * 8) + (var(--context-gap) * 7) + 2rem));
+    margin: 0.55rem auto 0.45rem;
+    padding: 0.55rem 1rem;
+  }
+
+  .context-token {
+    border-radius: 0.4rem;
+  }
+
+  .context-token svg {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .context-demo__footer {
+    gap: 0.45rem;
+  }
+
+  .process-note {
+    grid-column: 2;
+    font-size: 0.65rem;
   }
 
   .news-layout {
