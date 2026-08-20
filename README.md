@@ -2,7 +2,7 @@
 
 Presentación web para la charla de la Facultad de Economía. La interfaz usa una estética editorial inspirada en distill.pub, navegación vertical por scroll, teclado y controles en pantalla, con adaptación para móviles.
 
-Contenido actual: las 42 pantallas de la estructura definida en Notion, desde la apertura y la secuencia progresiva de doce noticias hasta la evolución conversacional, delegada, agéntica e integrada, la arquitectura técnica, la demo y el cierre. Cuando una fuente, un gráfico, un video o una demostración todavía no están definidos, la pantalla correspondiente conserva su lugar mediante un placeholder explícito.
+Contenido actual: las 44 pantallas de la estructura definida en Notion, incluido el flujo actual `objetivo → agente → espera → respuesta`, desde la apertura y la secuencia progresiva de doce noticias hasta la evolución conversacional, delegada, agéntica e integrada, la arquitectura técnica, la demo y el cierre. Cuando una fuente, un gráfico, un video o una demostración todavía no están definidos, la pantalla correspondiente conserva su lugar mediante un placeholder explícito.
 
 La arquitectura narrativa completa, desde el boom conversacional hasta la integración de agentes en el trabajo, está documentada en [`CONTENT_STRUCTURE.md`](./CONTENT_STRUCTURE.md).
 

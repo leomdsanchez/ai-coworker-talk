@@ -421,9 +421,9 @@ deck.insertAdjacentHTML('beforeend', remainingSlides.map((slide, index) => `
   <section
     class="slide ${slide.className}"
     id="${slide.id}"
-    data-slide-index="${index + 13}"
+    data-slide-index="${index + 15}"
     ${slide.theme ? `data-theme="${slide.theme}"` : ''}
-    aria-label="Diapositiva ${index + 14} de 42: ${slide.label}"
+    aria-label="Diapositiva ${index + 16} de 44: ${slide.label}"
   >${slide.html}</section>
 `).join(''))
 
@@ -436,6 +436,7 @@ progressRail.innerHTML = slides.map((_, index) => `
 `).join('')
 
 slides.forEach((slide, index) => {
+  slide.dataset.slideIndex = String(index)
   const label = slide.getAttribute('aria-label') || `Diapositiva ${index + 1}`
   slide.setAttribute('aria-label', label.replace(/Diapositiva \d+ de \d+/, `Diapositiva ${index + 1} de ${slides.length}`))
 })
