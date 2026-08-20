@@ -2,11 +2,10 @@ const deck = document.querySelector('.deck')
 const applePaperFigure = new URL('./assets/research/apple-illusion-of-thinking-figure.png', import.meta.url).href
 
 const contextPattern = [
-  ...Array(20).fill('correct'),
+  ...Array(8).fill('correct'),
   'error', 'correct', 'correct', 'correct',
-  'error', 'correct', 'correct', 'error', 'correct', 'error',
-  'correct', 'correct', 'error', 'error', 'correct', 'error',
-  'correct', 'error', 'error', 'correct', 'error', 'error', 'error', 'correct', 'error',
+  'error', 'correct', 'error', 'correct', 'correct',
+  'error', 'error', 'correct', 'error', 'error', 'correct', 'error', 'error',
 ]
 
 function contextTokenMarkup(state, index) {
@@ -103,7 +102,7 @@ const remainingSlides = [
           <header class="context-demo__header">
             <div>
               <span>Ventana de contexto</span>
-              <small><output data-context-time>00</output> / 15 s</small>
+              <small><output data-context-time>00</output> / 30 s</small>
             </div>
             <div class="context-controls" aria-label="Controles de la animación">
               <button type="button" data-context-toggle data-context-control aria-label="Pausar animación">
@@ -512,7 +511,8 @@ const contextProgress = contextDemo.querySelector('[data-context-progress]')
 const contextTime = contextDemo.querySelector('[data-context-time]')
 const contextToggle = contextDemo.querySelector('[data-context-toggle]')
 const contextRestart = contextDemo.querySelector('[data-context-restart]')
-const contextDuration = 15000
+const contextTokens = [...contextBelt.querySelectorAll('.context-token')]
+const contextDuration = 30000
 
 const burstPlacements = [
   [5, 8, 28, -4], [54, 6, 29, 3], [30, 35, 31, -2], [3, 48, 30, 2],
@@ -573,6 +573,10 @@ function restartContextAnimation(shouldPlay = true) {
   const visibleWidth = contextWindow.clientWidth - horizontalPadding
   const travel = Math.max(0, contextBelt.scrollWidth - visibleWidth)
   const timing = { duration: contextDuration, easing: 'linear', fill: 'forwards' }
+  const beltStyles = window.getComputedStyle(contextBelt)
+  const tokenStep = (contextTokens[0]?.offsetWidth || 1) + (parseFloat(beltStyles.columnGap) || 0)
+  const visibleTokenCount = Math.max(1, Math.ceil(visibleWidth / tokenStep))
+  const enteringTokenCount = Math.max(1, contextTokens.length - visibleTokenCount)
 
   const beltAnimation = contextBelt.animate(
     [{ transform: 'translate3d(0, 0, 0)' }, { transform: `translate3d(-${travel}px, 0, 0)` }],
@@ -582,10 +586,25 @@ function restartContextAnimation(shouldPlay = true) {
     [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
     timing,
   )
+  const tokenAnimations = contextTokens.map((token, index) => {
+    const delay = index < visibleTokenCount
+      ? 180 + (index * 130)
+      : 900 + (((index - visibleTokenCount + 1) / (enteringTokenCount + 1)) * (contextDuration - 1900))
 
-  contextAnimations = [beltAnimation, progressAnimation]
+    return token.animate(
+      [
+        { opacity: 0, transform: 'translateY(0.35rem) scale(0.68)' },
+        { opacity: 1, transform: 'translateY(-0.12rem) scale(1.06)', offset: 0.62 },
+        { opacity: 1, transform: 'translateY(0.04rem) scale(0.98)', offset: 0.82 },
+        { opacity: 1, transform: 'translateY(0) scale(1)' },
+      ],
+      { duration: 760, delay, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'both' },
+    )
+  })
+
+  contextAnimations = [beltAnimation, progressAnimation, ...tokenAnimations]
   beltAnimation.addEventListener('finish', () => {
-    contextTime.textContent = '15'
+    contextTime.textContent = '30'
     syncContextControl()
     stopContextClock()
   }, { once: true })

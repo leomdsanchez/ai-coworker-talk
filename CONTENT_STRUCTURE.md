@@ -151,7 +151,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 - **Función:** explicar cómo un error dentro de la ventana de contexto condiciona los pasos siguientes.
 - **Contenido visible:** `Cada paso depende de los anteriores.` / `Un error temprano condiciona los pasos siguientes.`
-- **Animación:** una cinta atraviesa una ventana de contexto durante 15 segundos; comienza con checks verdes, introduce una cruz roja aislada y termina con una concentración creciente de errores.
+- **Animación:** una cinta editorial integrada al fondo atraviesa la ventana de contexto durante 30 segundos; utiliza menos elementos, hace aparecer cada marcador con un rebote suave, comienza con checks verdes, introduce una cruz roja aislada y termina con una concentración creciente de errores.
 - **Interacción:** se inicia automáticamente cada vez que el slide entra en foco, se detiene al salir y dispone de controles sutiles para pausar, continuar y reiniciar.
 - **Narrativa oral:** el modelo no toma cada decisión desde cero; trabaja condicionado por el contexto que acaba de producir.
 
