@@ -360,6 +360,145 @@ button {
   background: #8066ea;
 }
 
+.news-layout {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: clamp(5rem, 8vw, 7rem) clamp(4rem, 7vw, 7rem) clamp(5rem, 8vw, 7rem) 0;
+}
+
+.news-title {
+  position: relative;
+  z-index: 1;
+  max-width: 9ch;
+  margin: 0;
+  color: #cfced2;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(4.5rem, 8vw, 8.2rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.news-canvas {
+  position: absolute;
+  inset: clamp(4rem, 7vw, 6rem) clamp(4rem, 7vw, 7rem) clamp(5.5rem, 8vw, 7rem) 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.news-clip {
+  position: absolute;
+  display: grid;
+  min-height: clamp(9rem, 14vw, 12.4rem);
+  padding: clamp(1rem, 1.8vw, 1.55rem);
+  border-top: 3px solid #8066ea;
+  color: #171719;
+  background: #e8e5df;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.34);
+  transform-origin: center;
+}
+
+.news-clip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(20, 20, 24, 0.12);
+  pointer-events: none;
+}
+
+.news-clip header,
+.news-clip footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.news-clip header {
+  align-self: start;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(20, 20, 24, 0.18);
+  color: rgba(23, 23, 25, 0.58);
+}
+
+.news-clip header strong {
+  color: #171719;
+  font-weight: 800;
+}
+
+.news-clip h3 {
+  align-self: center;
+  margin: 1rem 0;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 2.05rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.news-clip footer {
+  align-self: end;
+  color: rgba(23, 23, 25, 0.48);
+}
+
+.news-clip footer b {
+  color: #6e54db;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.clip-openclaw {
+  top: 3%;
+  left: 0;
+  width: 34%;
+  transform: rotate(-1.8deg);
+}
+
+.clip-hermes {
+  top: 7%;
+  right: 2%;
+  width: 31%;
+  transform: rotate(1.5deg);
+}
+
+.clip-cowork {
+  bottom: 3%;
+  left: 7%;
+  width: 30%;
+  transform: rotate(1deg);
+}
+
+.clip-claude-code {
+  right: 7%;
+  bottom: 2%;
+  width: 34%;
+  transform: rotate(-1.2deg);
+}
+
+.clip-chatgpt-work {
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  width: 34%;
+  transform: translate(-50%, -50%) rotate(0.6deg);
+}
+
+.news-legend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
 @keyframes scroll-pulse {
   0% { transform: translateX(-110%); }
   55%, 100% { transform: translateX(210%); }
@@ -433,6 +572,75 @@ button {
     font-size: 0.58rem;
   }
 
+  .news-layout {
+    padding: 4.5rem 2.35rem 5rem 0;
+  }
+
+  .news-title {
+    max-width: 8ch;
+    font-size: clamp(3.3rem, 14vw, 5.4rem);
+  }
+
+  .news-canvas {
+    inset: 4.5rem 2.5rem 5.5rem 0;
+  }
+
+  .news-clip {
+    min-height: 8.2rem;
+    padding: 0.8rem;
+  }
+
+  .news-clip header,
+  .news-clip footer {
+    gap: 0.5rem;
+    font-size: 0.46rem;
+  }
+
+  .news-clip header {
+    padding-bottom: 0.48rem;
+  }
+
+  .news-clip h3 {
+    margin: 0.65rem 0;
+    font-size: clamp(0.9rem, 3.7vw, 1.22rem);
+  }
+
+  .news-clip footer b {
+    font-size: 0.7rem;
+  }
+
+  .clip-openclaw {
+    top: 2%;
+    width: 60%;
+  }
+
+  .clip-hermes {
+    top: 15%;
+    right: 0;
+    width: 58%;
+  }
+
+  .clip-cowork {
+    bottom: 13%;
+    left: 2%;
+    width: 57%;
+  }
+
+  .clip-claude-code {
+    right: 0;
+    bottom: 1%;
+    width: 60%;
+  }
+
+  .clip-chatgpt-work {
+    top: 53%;
+    width: 66%;
+  }
+
+  .news-legend {
+    bottom: 0.25rem;
+  }
+
   .deck-controls {
     right: 1.4rem;
     bottom: calc(1rem + env(safe-area-inset-bottom));
@@ -469,6 +677,29 @@ button {
   .slide--statement-final .statement {
     max-width: 22ch;
     font-size: clamp(2.15rem, 5.8vw, 3.8rem);
+  }
+
+  .news-layout {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .news-title {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+  }
+
+  .news-canvas {
+    inset: 2.7rem 4rem 3.5rem 0;
+  }
+
+  .news-clip {
+    min-height: 6.5rem;
+    padding: 0.7rem;
+  }
+
+  .news-clip h3 {
+    margin: 0.5rem 0;
+    font-size: clamp(0.85rem, 2vw, 1.15rem);
   }
 
   .deck-header {
