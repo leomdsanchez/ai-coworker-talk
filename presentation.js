@@ -270,11 +270,11 @@ const remainingSlides = [
     id: 'slide-26',
     className: 'slide--light-extension',
     theme: 'light',
-    label: 'Antes usábamos IA durante nuestra jornada',
+    label: 'Ahora usamos IA durante nuestra jornada',
     html: `
       <div class="slide__inner workday-layout">
-        <span class="workday-index">Antes</span>
-        <h2>Usábamos la IA como una <em>herramienta</em> durante nuestra jornada.</h2>
+        <span class="workday-index">Ahora</span>
+        <h2>Usamos la IA como una <em>herramienta</em> durante nuestra jornada.</h2>
         <div class="workday-line" aria-hidden="true"><i></i><b></b><i></i><i></i><b></b><i></i></div>
         <p>Intervenciones puntuales dentro del trabajo humano.</p>
       </div>`,
@@ -282,13 +282,13 @@ const remainingSlides = [
   {
     id: 'slide-27',
     className: 'slide--violet-extension',
-    label: 'Ahora la IA puede tener su propia jornada',
+    label: 'En un futuro próximo la IA podrá tener su propia jornada',
     html: `
       <div class="slide__inner workday-layout workday-layout--now">
-        <span class="workday-index">Ahora</span>
-        <h2>La IA puede tener su propia jornada y colaborar como <em>parte del equipo.</em></h2>
+        <span class="workday-index">Futuro próximo</span>
+        <h2>La IA podrá tener su propia jornada y colaborar como <em>parte del equipo.</em></h2>
         <div class="workday-line" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b></div>
-        <p>Ya no delegamos solamente tareas. Delegamos objetivos recurrentes.</p>
+        <p>Ya no delegaremos solamente tareas. Delegaremos objetivos recurrentes.</p>
       </div>`,
   },
   {

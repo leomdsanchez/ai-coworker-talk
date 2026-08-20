@@ -212,17 +212,17 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Puntos:** conectores → skills → rutinas → hooks.
 - **Visual:** lista vertical numerada con la misma gramática visual del slide del harness.
 
-#### 27 — Antes la usábamos durante nuestra jornada
+#### 27 — Ahora la usamos durante nuestra jornada
 
-- **Función:** establecer el “antes” del cambio operativo.
-- **Contenido visible:** `Usábamos la IA como una herramienta durante nuestra jornada laboral.`
+- **Función:** establecer cómo utilizamos la IA en el presente.
+- **Contenido visible:** `Ahora usamos la IA como una herramienta durante nuestra jornada laboral.`
 - **Visual:** jornada humana con intervenciones puntuales de IA.
 
-#### 28 — Ahora la IA tiene su propia jornada
+#### 28 — En un futuro próximo, la IA tendrá su propia jornada
 
-- **Función:** presentar el “ahora” con una imagen concreta.
-- **Contenido visible:** `Ahora la IA puede tener su propia jornada y colaborar como parte del equipo.`
-- **Idea central:** `Ya no delegamos solamente tareas. Delegamos objetivos recurrentes.`
+- **Función:** presentar el futuro próximo con una imagen concreta.
+- **Contenido visible:** `La IA podrá tener su propia jornada y colaborar como parte del equipo.`
+- **Idea central:** `Ya no delegaremos solamente tareas. Delegaremos objetivos recurrentes.`
 
 #### 29 — Modo 4: Integrada
 
