@@ -49,7 +49,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 - **Función:** mostrar la relación operativa actual antes de cuestionarla.
 - **Contenido visible:** `Objetivo → Agente → Minutos · horas → Respuesta`.
-- **Visual:** flujo editorial, horizontal en desktop y vertical en móvil.
+- **Visual:** figura explicativa inspirada en Distill, horizontal en desktop y vertical en móvil.
 - **Estado:** implementada.
 
 #### 04 — ¿Cuál es el problema de usar la IA como herramienta?
