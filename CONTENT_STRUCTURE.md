@@ -202,15 +202,15 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 #### 25 — Volvemos al presente
 
 - **Función:** recuperar la saturación inicial después de haber explicado su origen.
-- **Contenido visible:** `Ahora podemos leer estas noticias de otra manera.`
-- **Visual:** tres recortes estáticos de la apertura — OpenClaw, Cowork y Codex — para recuperar visualmente las señales del presente.
+- **Contenido visible:** `Ahora estas noticias tienen otro significado.`
+- **Visual:** tres recortes estáticos de la apertura — OpenClaw, Cowork y Codex — superpuestos en profundidad detrás del texto, sin ocupar una columna del layout.
 
 #### 26 — Cuatro piezas para que la IA se convierta en coworker
 
 - **Función:** sintetizar los elementos que considero cruciales para que la IA opere como una compañera de trabajo.
 - **Contenido visible:** `Para que la IA se convierta en coworker.`
 - **Puntos:** conectores → skills → rutinas → hooks.
-- **Visual:** los cuatro pilares conectados en una única línea editorial.
+- **Visual:** lista vertical numerada con la misma gramática visual del slide del harness.
 
 #### 27 — Antes la usábamos durante nuestra jornada
 
@@ -238,71 +238,44 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Contenido visible:** `¿Cómo se ve una IA integrada al trabajo?`
 - **Ritmo:** pantalla corta que prepara una demostración.
 
-#### 31 — Mi integración
-
-- **Función:** mostrar un caso propio y verificable.
-- **Contenido visible:** nombre breve del flujo y el objetivo recurrente que resuelve.
-- **Formato:** compartir pantalla o demo en vivo.
-- **Plan B obligatorio:** grabación breve o capturas si la demostración falla.
-- **Material pendiente:** definir cuál integración personal se mostrará y qué datos deben ocultarse.
-
-#### 32 — Otros agentes ya están trabajando así
-
-- **Función:** ampliar el caso propio sin convertir el slide en catálogo.
-- **Contenido visible:** dos o tres ejemplos con una sola frase de significado por caso.
-- **Formato:** video integrado o clips muy breves.
-- **Material pendiente:** seleccionar videos, confirmar derechos de uso y preparar fallback local.
-
-#### 33 — ¿Cómo se integra un agente de IA?
-
-- **Función:** abrir el bloque técnico con una pregunta simple.
-- **Contenido visible:** `¿Cómo se integra un agente de IA?`
-- **Visual:** cambio de ritmo antes de desmontar la arquitectura.
-
-#### 34 — Un agente es un sistema, no solo un modelo
-
-- **Función:** definir agente con lenguaje operativo.
-- **Contenido visible:** `Un agente combina un modelo, instrucciones, herramientas, contexto y un ciclo de ejecución.`
-- **Narrativa oral:** el modelo decide; el sistema le permite observar, actuar y continuar.
-
-#### 35 — Herramientas y ambiente
+#### 31 — Herramientas y ambiente
 
 - **Función:** presentar el mapa técnico antes de explicar sus piezas.
 - **Contenido visible:** `MCP · Skills · Plugins · Agendamientos · Hooks`
 - **Visual:** una única arquitectura funcional que se reutiliza en las pantallas siguientes.
 
-#### 36 — MCP conecta al agente con el mundo
+#### 32 — MCP conecta al agente con el mundo
 
 - **Función:** explicar la capa de conexión.
 - **Contenido visible:** `MCP estandariza cómo un agente descubre y utiliza herramientas y datos.`
 - **Ejemplo:** un único recorrido relevante para la demo final.
 - **Fuente requerida:** especificación oficial y documentación vigente.
 
-#### 37 — Skills convierten experiencia en procedimiento
+#### 33 — Skills convierten experiencia en procedimiento
 
 - **Función:** explicar cómo se encapsulan instrucciones y métodos reutilizables.
 - **Contenido visible:** `Una skill enseña al agente cómo ejecutar bien un tipo de trabajo.`
 - **Ejemplo:** una skill concreta utilizada en la demostración.
 
-#### 38 — Plugins reúnen capacidades
+#### 34 — Plugins reúnen capacidades
 
 - **Función:** mostrar cómo herramientas, skills y aplicaciones se distribuyen como un conjunto.
 - **Contenido visible provisional:** `Un plugin reúne capacidades que el agente puede usar en un dominio.`
 - **Pendiente:** ajustar la definición al producto y plataforma mencionados en la charla.
 
-#### 39 — Agendamientos y hooks hacen el trabajo recurrente
+#### 35 — Agendamientos y hooks hacen el trabajo recurrente
 
 - **Función:** conectar agentes con operación continua.
 - **Contenido visible:** `Los agendamientos inician trabajo por tiempo. Los hooks lo inician por eventos.`
 - **Ejemplo:** un objetivo diario y un evento real del flujo mostrado.
 
-#### 40 — El esquema funcional completo
+#### 36 — El esquema funcional completo
 
 - **Función:** sintetizar el bloque técnico antes de la demo.
 - **Flujo visible:** evento u objetivo → agente → instrucciones/contexto → herramientas → verificación → resultado → siguiente ejecución.
 - **Regla visual:** reutilizar la arquitectura de la pantalla 37 y revelar ahora el recorrido completo.
 
-#### 41 — Demo práctica
+#### 37 — Demo práctica
 
 - **Función:** demostrar que el sistema puede completar un objetivo real de punta a punta.
 - **Contenido visible:** nombre del objetivo, estado actual y criterio de éxito.
@@ -311,7 +284,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ### Acto VII — Cierre
 
-#### 42 — El trabajo cambia de forma
+#### 38 — El trabajo cambia de forma
 
 - **Función:** resolver la tesis inicial sin repetirla literalmente.
 - **Contenido visible propuesto:** `La pregunta ya no es solamente qué podemos hacer con IA.` / `Es qué trabajo podemos rediseñar junto a ella.`

@@ -226,7 +226,7 @@ const remainingSlides = [
       <div class="slide__inner news-return-layout">
         <div class="news-return-copy">
           <p class="section-kicker">Volvemos al presente</p>
-          <h2>Ahora podemos leer estas noticias de <em>otra manera.</em></h2>
+          <h2>Ahora estas noticias tienen <em>otro significado.</em></h2>
         </div>
         <div class="news-return-clips" aria-label="Noticias presentadas al inicio de la charla">
           <article class="news-clip is-visible">
@@ -253,12 +253,17 @@ const remainingSlides = [
     theme: 'light',
     label: 'Cuatro piezas para que la IA se convierta en coworker',
     html: `
-      <div class="slide__inner ecosystem-layout">
-        <div class="ecosystem-copy">
+      <div class="slide__inner harness-layout coworker-layout">
+        <div class="harness-copy">
           <p class="section-kicker">Cuatro piezas que considero cruciales</p>
           <h2>Para que la IA se convierta en <em>coworker.</em></h2>
         </div>
-        <div class="ecosystem-line" aria-label="Piezas cruciales para que la IA se convierta en coworker"><span>Conectores</span><i></i><span>Skills</span><i></i><span>Rutinas</span><i></i><span>Hooks</span></div>
+        <ol class="harness-loop" aria-label="Piezas cruciales para que la IA se convierta en coworker">
+          <li><span>01</span><strong>Conectores</strong></li>
+          <li><span>02</span><strong>Skills</strong></li>
+          <li><span>03</span><strong>Rutinas</strong></li>
+          <li><span>04</span><strong>Hooks</strong></li>
+        </ol>
       </div>`,
   },
   {
@@ -302,60 +307,6 @@ const remainingSlides = [
         <p class="section-kicker">Integración en la práctica</p>
         <h2 class="story-title">¿Cómo se ve una IA <em>integrada al trabajo?</em></h2>
         <p class="story-note">Primero, un caso real. Después, la arquitectura que lo hace posible.</p>
-      </div>`,
-  },
-  {
-    id: 'slide-30',
-    className: 'slide--light-extension',
-    theme: 'light',
-    label: 'Ejemplo de integración personal',
-    html: `
-      <div class="slide__inner demo-case-layout">
-        <div class="demo-case-copy">
-          <p class="section-kicker">Ejemplo 01 · integración propia</p>
-          <h2>Un objetivo recurrente ejecutado <em>de punta a punta.</em></h2>
-          <p>Definir el flujo, el resultado esperado y los datos que deben ocultarse.</p>
-        </div>
-        <div class="media-placeholder media-placeholder--demo" role="img" aria-label="Placeholder para demostración de una integración propia">
-          <span>Demo en vivo</span><strong>Integración por definir</strong><small>Preparar grabación de respaldo</small>
-        </div>
-      </div>`,
-  },
-  {
-    id: 'slide-31',
-    className: 'slide--light-extension',
-    theme: 'light',
-    label: 'Otros ejemplos de agentes integrados',
-    html: `
-      <div class="slide__inner video-examples-layout">
-        <div class="video-examples-heading"><p class="section-kicker">Otros ejemplos</p><h2>Los agentes ya están trabajando <em>así.</em></h2></div>
-        <div class="video-placeholders">
-          <div class="media-placeholder" role="img" aria-label="Placeholder para primer video"><span>Video 01</span><strong>Ejemplo por seleccionar</strong><small>Clip breve + fallback local</small></div>
-          <div class="media-placeholder" role="img" aria-label="Placeholder para segundo video"><span>Video 02</span><strong>Ejemplo por seleccionar</strong><small>Clip breve + fallback local</small></div>
-        </div>
-      </div>`,
-  },
-  {
-    id: 'slide-32',
-    className: 'slide--violet-extension',
-    label: 'Cómo se integra un agente de IA',
-    html: `
-      <div class="slide__inner simple-task-layout">
-        <p class="section-kicker">Abrimos el sistema</p>
-        <h2>¿Cómo se integra un <em>agente de IA?</em></h2>
-        <div class="simple-task-axis" aria-hidden="true"><span>Modelo</span><i></i><span>Sistema</span></div>
-      </div>`,
-  },
-  {
-    id: 'slide-33',
-    className: 'slide--light-extension',
-    theme: 'light',
-    label: 'Un agente es un sistema',
-    html: `
-      <div class="slide__inner agent-definition-layout">
-        <p class="section-kicker">Una definición operativa</p>
-        <h2>Un agente es un <em>sistema</em>, no solo un modelo.</h2>
-        <div class="agent-equation" aria-label="Componentes de un agente"><span>Modelo</span><b>+</b><span>Instrucciones</span><b>+</b><span>Herramientas</span><b>+</b><span>Contexto</span><b>+</b><span>Ciclo</span></div>
       </div>`,
   },
   {
