@@ -2,7 +2,7 @@
 
 Fuente principal: [página «Contenido» en Notion](https://app.notion.com/p/3c138c9506cb80689206df45306d0a6e)
 
-Estado: arquitectura narrativa preparada. Las pantallas 01–06 ya están implementadas; las siguientes están listas para diseño, investigación y producción.
+Estado: arquitectura narrativa preparada. Las pantallas 01–13 ya están implementadas; las siguientes están listas para diseño, investigación y producción.
 
 ## Trabajo de comunicación
 
@@ -80,7 +80,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Contenido visible:** `30 de noviembre de 2022.` / `ChatGPT se lanza públicamente.`
 - **Apoyo:** `Basado en un modelo de la serie GPT-3.5.`
 - **Visual:** fecha monumental y entrada de ChatGPT en la línea temporal.
-- **Fuente requerida:** anuncio oficial de OpenAI.
+- **Fuente confirmada:** [OpenAI, «Introducing ChatGPT», 30 de noviembre de 2022](https://openai.com/index/chatgpt/).
 
 #### 08 — Una máquina con la que podíamos conversar
 
@@ -317,8 +317,8 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ## Estado de producción
 
-- **Implementadas:** pantallas 01–06, incluida la interacción progresiva de noticias.
-- **Listas para diseñar:** pantallas 07–14, 16–21, 24–30, 33–35 y 40–42.
+- **Implementadas:** pantallas 01–13, incluida la interacción progresiva de noticias y las dos primeras apariciones del mapa de modos.
+- **Listas para diseñar:** pantalla 14, pantallas 16–21, 24–30, 33–35 y 40–42.
 - **Requieren investigación antes del copy final:** 15, 20–23, 36 y 38.
 - **Requieren material del presentador:** 19, 31, 32 y 41.
 

@@ -2,7 +2,7 @@
 
 Presentación web para la charla de la Facultad de Economía. La interfaz usa una estética editorial inspirada en distill.pub, navegación vertical por scroll, teclado y controles en pantalla, con adaptación para móviles.
 
-Contenido actual: diapositivas 1, 2.1, 2.2, una única diapositiva 3 con doce noticias en español que aparecen progresivamente sin desplazar el viewport, una ráfaga acelerada de noticias, la pausa «¡Calma!» y una introducción limpia a la línea temporal.
+Contenido actual: apertura, una única diapositiva con doce noticias que aparecen progresivamente, la pausa «¡Calma!» y el primer arco de la línea temporal: lanzamiento de ChatGPT, experiencia conversacional, herramientas y delegación.
 
 La arquitectura narrativa completa, desde el boom conversacional hasta la integración de agentes en el trabajo, está documentada en [`CONTENT_STRUCTURE.md`](./CONTENT_STRUCTURE.md).
 

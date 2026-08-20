@@ -744,6 +744,451 @@ body.is-light-slide .navigation-buttons button {
   background: rgba(233, 230, 223, 0.78);
 }
 
+.slide--timeline-date,
+.slide--conversation,
+.slide--modes,
+.slide--delegation {
+  color: #242329;
+  background: #e9e6df;
+}
+
+.slide--timeline-date::before,
+.slide--conversation::before,
+.slide--modes::before,
+.slide--delegation::before {
+  opacity: 0.48;
+  background-image: linear-gradient(rgba(20, 19, 23, 0.055) 1px, transparent 1px);
+}
+
+.slide--timeline-date::after,
+.slide--conversation::after,
+.slide--modes::after,
+.slide--delegation::after {
+  background: rgba(92, 66, 199, 0.24);
+}
+
+.timeline-date-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.72fr);
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  column-gap: clamp(3rem, 8vw, 9rem);
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(3.8rem, 6vw, 5.5rem) 0;
+}
+
+.timeline-date-mark time {
+  display: block;
+  color: #242329;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(5rem, 13vw, 13rem);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+}
+
+.timeline-date-mark span,
+.timeline-date-copy > p:first-child {
+  display: block;
+  margin-top: 1.5rem;
+  color: #694fd5;
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.timeline-date-copy h2 {
+  margin: 0.75rem 0 1.5rem;
+  color: #694fd5;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.timeline-date-copy__support {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(36, 35, 41, 0.66);
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 2.05rem);
+  line-height: 1.25;
+}
+
+.timeline-date-footer {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(27, 26, 30, 0.48);
+}
+
+.timeline-date-footer__dot {
+  width: 0.78rem;
+  height: 0.78rem;
+  border: 3px solid #e9e6df;
+  border-radius: 50%;
+  background: #694fd5;
+  box-shadow: 0 0 0 1px #694fd5;
+}
+
+.timeline-date-footer__line {
+  height: 1px;
+  background: linear-gradient(90deg, #694fd5, rgba(105, 79, 213, 0.12));
+}
+
+.timeline-date-footer cite {
+  font-size: 0.57rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.conversation-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 0.76fr);
+  grid-template-rows: 1fr auto;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(3.8rem, 6vw, 5.5rem) 0;
+}
+
+.conversation-copy > p,
+.modes-heading > p,
+.delegation-layout > p,
+.action-question-layout > p,
+.tools-heading > p {
+  margin: 0 0 1.6rem;
+  color: #694fd5;
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.conversation-copy h2 {
+  max-width: 11ch;
+  margin: 0;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(3.8rem, 7vw, 7.7rem);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.06em;
+}
+
+.conversation-copy h2 em,
+.modes-heading h2 em,
+.delegation-layout h2 em,
+.tools-heading h2 em,
+.action-question-layout h2 em {
+  color: #6a50d4;
+  font-weight: 400;
+}
+
+.conversation-sequence {
+  display: grid;
+  gap: clamp(0.8rem, 1.7vw, 1.35rem);
+  align-content: center;
+}
+
+.conversation-sequence span {
+  position: relative;
+  display: block;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(36, 35, 41, 0.16);
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(1.65rem, 3vw, 3rem);
+  line-height: 1;
+}
+
+.conversation-sequence span::before {
+  display: inline-block;
+  width: 2rem;
+  margin-right: 1rem;
+  color: rgba(36, 35, 41, 0.34);
+  font: 700 0.56rem/1 Inter, sans-serif;
+  letter-spacing: 0.12em;
+  vertical-align: middle;
+}
+
+.conversation-sequence__human::before {
+  content: "TÚ";
+}
+
+.conversation-sequence__ai {
+  color: #694fd5;
+  transform: translateX(clamp(1rem, 3vw, 3rem));
+}
+
+.conversation-sequence__ai::before {
+  content: "IA";
+}
+
+.conversation-note {
+  grid-column: 1 / -1;
+  max-width: 48rem;
+  margin: 0;
+  color: rgba(36, 35, 41, 0.5);
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  line-height: 1.5;
+}
+
+.modes-layout {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(4.2rem, 7vw, 6.5rem) 0;
+}
+
+.modes-heading {
+  align-self: center;
+}
+
+.modes-heading h2 {
+  margin: 0;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(4rem, 8.5vw, 9rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.modes-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modes-track::before {
+  content: "";
+  position: absolute;
+  top: 0.42rem;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: rgba(36, 35, 41, 0.15);
+}
+
+.mode-step {
+  position: relative;
+  min-height: 7rem;
+  padding: 2rem 1.2rem 0 0;
+}
+
+.mode-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.82rem;
+  height: 0.82rem;
+  border: 3px solid #e9e6df;
+  border-radius: 50%;
+  background: #c1bdb5;
+  box-shadow: 0 0 0 1px #b3afa7;
+}
+
+.mode-step > span {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: rgba(36, 35, 41, 0.34);
+  font-size: 0.57rem;
+  font-weight: 720;
+  letter-spacing: 0.12em;
+}
+
+.mode-step strong {
+  display: block;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.mode-step small {
+  display: block;
+  margin-top: 0.65rem;
+  color: rgba(36, 35, 41, 0.48);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.mode-step.is-unlocked::before {
+  background: #694fd5;
+  box-shadow: 0 0 0 1px #694fd5;
+}
+
+.mode-step.is-unlocked strong,
+.mode-step.is-unlocked > span {
+  color: #694fd5;
+}
+
+.mode-step.is-complete::before {
+  background: #242329;
+  box-shadow: 0 0 0 1px #242329;
+}
+
+.mode-step.is-locked strong {
+  color: rgba(36, 35, 41, 0.24);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.slide--action-question {
+  color: #f1eff7;
+  background: #674ed0;
+}
+
+.slide--action-question::before {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+}
+
+.slide--action-question::after {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.action-question-layout {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(4rem, 6vw, 5rem) 0;
+}
+
+.action-question-layout > p {
+  align-self: end;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.action-question-layout h2 {
+  max-width: 12ch;
+  margin: 0.45rem 0 auto;
+  color: #f1eff7;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(4rem, 9vw, 9.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+.action-question-layout h2 em {
+  color: #17151d;
+}
+
+.action-question-shift {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.62rem;
+  font-weight: 740;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.action-question-shift i {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), #17151d);
+}
+
+.tools-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: center;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(3rem, 5vw, 4rem) 0;
+}
+
+.tools-heading h2 {
+  max-width: 11ch;
+  margin: 0;
+  color: #efedf2;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(3.8rem, 7vw, 7.4rem);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.06em;
+}
+
+.tools-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tools-list li {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(216, 215, 220, 0.13);
+}
+
+.tools-list span {
+  color: rgba(216, 215, 220, 0.3);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+}
+
+.tools-list strong {
+  color: #efedf2;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(1.6rem, 2.7vw, 2.8rem);
+  font-weight: 400;
+}
+
+.tools-list small {
+  color: #8973ec;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.delegation-layout {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(3rem, 5vw, 4rem) 0;
+}
+
+.delegation-layout h2 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(4rem, 8vw, 8.6rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.delegation-index {
+  position: absolute;
+  right: clamp(1rem, 6vw, 6rem);
+  bottom: clamp(2rem, 7vw, 7rem);
+  color: rgba(105, 79, 213, 0.12);
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(9rem, 24vw, 25rem);
+  line-height: 0.7;
+}
+
 @keyframes scroll-pulse {
   0% { transform: translateX(-110%); }
   55%, 100% { transform: translateX(210%); }
@@ -948,6 +1393,168 @@ body.is-light-slide .navigation-buttons button {
 
   .timeline-seed {
     gap: 0.72rem;
+  }
+
+  .timeline-date-layout,
+  .conversation-layout,
+  .tools-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.8rem;
+    min-height: calc(100dvh - 7.1rem);
+    padding: 5rem 2.35rem 2.2rem 0;
+  }
+
+  .timeline-date-mark time {
+    font-size: clamp(4.2rem, 20vw, 6.4rem);
+  }
+
+  .timeline-date-mark span,
+  .timeline-date-copy > p:first-child {
+    margin-top: 0.9rem;
+  }
+
+  .timeline-date-copy h2 {
+    margin: 0.45rem 0 0.8rem;
+    font-size: clamp(3.5rem, 17vw, 5.8rem);
+  }
+
+  .timeline-date-copy__support {
+    max-width: 22rem;
+    font-size: clamp(1.05rem, 5vw, 1.35rem);
+  }
+
+  .timeline-date-footer {
+    gap: 0.7rem;
+  }
+
+  .timeline-date-footer cite {
+    max-width: 8rem;
+    text-align: right;
+  }
+
+  .conversation-layout {
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .conversation-copy h2 {
+    max-width: 9ch;
+    font-size: clamp(3.4rem, 15.5vw, 5.6rem);
+  }
+
+  .conversation-sequence {
+    align-self: center;
+    gap: 0.35rem;
+  }
+
+  .conversation-sequence span {
+    padding: 0.45rem 0;
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+  }
+
+  .conversation-sequence__ai {
+    transform: translateX(1.2rem);
+  }
+
+  .conversation-note {
+    font-size: 0.72rem;
+  }
+
+  .modes-layout,
+  .action-question-layout,
+  .delegation-layout {
+    min-height: calc(100dvh - 7.1rem);
+    padding: 5rem 2.35rem 2.4rem 0;
+  }
+
+  .modes-heading h2 {
+    max-width: 8ch;
+    font-size: clamp(3.6rem, 17vw, 6rem);
+  }
+
+  .modes-track {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .modes-track::before {
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0.4rem;
+    width: 1px;
+    height: auto;
+  }
+
+  .mode-step {
+    min-height: 0;
+    padding: 0 0 0.9rem 2.2rem;
+  }
+
+  .mode-step::before {
+    top: 0.05rem;
+  }
+
+  .mode-step > span {
+    display: inline;
+    margin-right: 0.7rem;
+  }
+
+  .mode-step strong {
+    display: inline;
+    font-size: clamp(1.05rem, 5vw, 1.4rem);
+  }
+
+  .mode-step small {
+    margin: 0.2rem 0 0;
+    font-size: 0.6rem;
+  }
+
+  .mode-step.is-locked strong {
+    font-size: 0.55rem;
+  }
+
+  .action-question-layout h2 {
+    max-width: 8ch;
+    font-size: clamp(3.7rem, 17vw, 6.4rem);
+  }
+
+  .tools-layout {
+    grid-template-rows: auto 1fr;
+  }
+
+  .tools-heading h2 {
+    max-width: 9ch;
+    font-size: clamp(3.25rem, 14.5vw, 5.4rem);
+  }
+
+  .tools-list {
+    align-self: center;
+  }
+
+  .tools-list li {
+    grid-template-columns: 1.65rem 1fr auto;
+    gap: 0.55rem;
+    padding: 0.72rem 0;
+  }
+
+  .tools-list strong {
+    font-size: clamp(1.2rem, 5.6vw, 1.7rem);
+  }
+
+  .tools-list small {
+    font-size: 0.5rem;
+  }
+
+  .delegation-layout h2 {
+    max-width: 9ch;
+    font-size: clamp(3.6rem, 16vw, 5.8rem);
+  }
+
+  .delegation-index {
+    right: 2.4rem;
+    bottom: 6rem;
+    font-size: clamp(9rem, 45vw, 14rem);
   }
 
   .deck-controls {
