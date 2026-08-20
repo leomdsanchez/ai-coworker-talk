@@ -351,17 +351,6 @@ const remainingSlides = [
       </div>`,
   },
   {
-    id: 'slide-38',
-    className: 'slide--light-extension',
-    theme: 'light',
-    label: 'Agendamientos y hooks hacen el trabajo recurrente',
-    html: `
-      <div class="slide__inner triggers-layout">
-        <div class="triggers-heading"><p class="section-kicker">Componentes 04 y 05</p><h2>El trabajo comienza por <em>tiempo</em> o por <em>eventos.</em></h2></div>
-        <div class="trigger-pair"><article><span>Agendamientos</span><strong>Cuando llega el momento</strong><p>Inician objetivos diarios, semanales o periódicos.</p></article><article><span>Hooks</span><strong>Cuando algo sucede</strong><p>Reaccionan a eventos de aplicaciones y sistemas.</p></article></div>
-      </div>`,
-  },
-  {
     id: 'slide-39',
     className: 'slide--tech-dark',
     label: 'Esquema funcional completo',
@@ -369,18 +358,6 @@ const remainingSlides = [
       <div class="slide__inner full-system-layout">
         <div class="full-system-heading"><p class="section-kicker">El sistema completo</p><h2>Un objetivo entra. Un resultado <em>verificable</em> sale.</h2></div>
         <ol class="full-system-flow" aria-label="Esquema funcional de un agente integrado"><li><span>01</span><strong>Evento u objetivo</strong></li><li><span>02</span><strong>Agente</strong></li><li><span>03</span><strong>Contexto</strong></li><li><span>04</span><strong>Herramientas</strong></li><li><span>05</span><strong>Verificación</strong></li><li><span>06</span><strong>Resultado</strong></li></ol>
-      </div>`,
-  },
-  {
-    id: 'slide-40',
-    className: 'slide--light-extension',
-    theme: 'light',
-    label: 'Demo práctica',
-    html: `
-      <div class="slide__inner live-demo-layout">
-        <div class="live-demo-index">Demo</div>
-        <div class="live-demo-copy"><p class="section-kicker">Objetivo real · punta a punta</p><h2>Ahora, veamos el sistema <em>trabajar.</em></h2><p>Definir objetivo, criterio de éxito, cuenta segura y resultado final precargado.</p></div>
-        <div class="media-placeholder media-placeholder--wide" role="img" aria-label="Placeholder para demostración práctica"><span>Demostración</span><strong>Flujo por definir</strong><small>Versión grabada obligatoria</small></div>
       </div>`,
   },
   {

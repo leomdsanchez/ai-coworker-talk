@@ -263,28 +263,15 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Contenido visible provisional:** `Un plugin reúne capacidades que el agente puede usar en un dominio.`
 - **Pendiente:** ajustar la definición al producto y plataforma mencionados en la charla.
 
-#### 35 — Agendamientos y hooks hacen el trabajo recurrente
+#### 35 — El esquema funcional completo
 
-- **Función:** conectar agentes con operación continua.
-- **Contenido visible:** `Los agendamientos inician trabajo por tiempo. Los hooks lo inician por eventos.`
-- **Ejemplo:** un objetivo diario y un evento real del flujo mostrado.
-
-#### 36 — El esquema funcional completo
-
-- **Función:** sintetizar el bloque técnico antes de la demo.
+- **Función:** sintetizar el bloque técnico antes del cierre.
 - **Flujo visible:** evento u objetivo → agente → instrucciones/contexto → herramientas → verificación → resultado → siguiente ejecución.
-- **Regla visual:** reutilizar la arquitectura de la pantalla 37 y revelar ahora el recorrido completo.
-
-#### 37 — Demo práctica
-
-- **Función:** demostrar que el sistema puede completar un objetivo real de punta a punta.
-- **Contenido visible:** nombre del objetivo, estado actual y criterio de éxito.
-- **Plan B obligatorio:** versión grabada, datos anonimizados y resultado final precargado.
-- **Material pendiente:** definir demo, duración, cuenta segura y criterio verificable de finalización.
+- **Regla visual:** reutilizar la arquitectura de la pantalla 31 y revelar ahora el recorrido completo.
 
 ### Acto VII — Cierre
 
-#### 38 — El trabajo cambia de forma
+#### 36 — El trabajo cambia de forma
 
 - **Función:** resolver la tesis inicial sin repetirla literalmente.
 - **Contenido visible propuesto:** `La pregunta ya no es solamente qué podemos hacer con IA.` / `Es qué trabajo podemos rediseñar junto a ella.`
@@ -293,11 +280,11 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ## Estado de producción
 
-- **Estructura implementada:** pantallas 01–44, incluida la interacción progresiva de noticias y las cuatro apariciones del mapa de modos.
-- **Con contenido y diseño base:** pantallas 01–21, 26–32, 35–42 y 44.
-- **Representadas con placeholder:** pantallas 22–25, 33–34 y 43.
-- **Requieren investigación antes del copy final:** 22–25, 38 y 40.
-- **Requieren material del presentador:** 21, 33, 34 y 43.
+- **Estructura implementada:** pantallas 01–36, incluida la interacción progresiva de noticias y las cuatro apariciones del mapa de modos.
+- **Con contenido y diseño base:** la secuencia completa conserva la dirección editorial y visual definida.
+- **Representadas con placeholder:** consultar las notas pendientes de cada pantalla.
+- **Requieren investigación antes del copy final:** consultar las entradas que todavía indican una fuente o definición pendiente.
+- **Requieren material del presentador:** casos y demostraciones señalados como pendientes en la estructura.
 
 ## Cola de fuentes y materiales
 
