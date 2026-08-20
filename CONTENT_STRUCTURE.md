@@ -41,21 +41,21 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 #### 02 — Cambio de paradigma
 
-- **Función:** instalar la tesis inicial.
-- **Contenido visible:** `La IA está dejando de ser una herramienta para convertirse en una compañera de trabajo.`
+- **Función:** abrir la transición y marcar el límite del paradigma actual.
+- **Contenido visible:** `La IA está dejando de ser una herramienta.`
 - **Estado:** implementada.
 
 #### 03 — Cómo usamos la IA hoy
 
 - **Función:** mostrar la relación operativa actual antes de cuestionarla.
-- **Contenido visible:** `Objetivo → Agente → Minutos · horas → Respuesta`.
-- **Visual:** figura explicativa inspirada en Distill, horizontal en desktop y vertical en móvil.
+- **Contenido visible:** `Objetivo → Agente → Minutos u horas → Respuesta`.
+- **Visual:** ilustración editorial generada como base, con flujo explicativo, rótulos en HTML e iconografía Lucide; horizontal en desktop y vertical en móvil.
 - **Estado:** implementada.
 
-#### 04 — ¿Cuál es el problema de usar la IA como herramienta?
+#### 04 — Se está convirtiendo en una compañera de trabajo
 
-- **Función:** abrir la tensión que conduce a la tesis siguiente.
-- **Contenido visible:** `¿Cuál es el problema de usar la IA como herramienta?`
+- **Función:** completar la transición iniciada en el slide 2 después de mostrar el modo de uso actual.
+- **Contenido visible:** `Se está convirtiendo en una compañera de trabajo.`
 - **Estado:** implementada.
 
 #### 05 — Gran parte del trabajo
