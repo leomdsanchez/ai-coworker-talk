@@ -205,11 +205,12 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Contenido visible:** `Ahora podemos leer estas noticias de otra manera.`
 - **Visual:** tres recortes estáticos de la apertura — OpenClaw, Cowork y Codex — para recuperar visualmente las señales del presente.
 
-#### 26 — La IA se está integrando a nuestro ecosistema
+#### 26 — Cuatro piezas para que la IA se convierta en coworker
 
-- **Función:** dar una interpretación única a las señales del mercado.
-- **Contenido visible:** `La inteligencia artificial se está integrando a nuestro ecosistema de trabajo.`
-- **Visual:** la línea temporal desemboca en aplicaciones, navegadores, sistemas y equipos.
+- **Función:** sintetizar los elementos que considero cruciales para que la IA opere como una compañera de trabajo.
+- **Contenido visible:** `Para que la IA se convierta en coworker.`
+- **Puntos:** conectores → skills → rutinas → hooks.
+- **Visual:** los cuatro pilares conectados en una única línea editorial.
 
 #### 27 — Antes la usábamos durante nuestra jornada
 

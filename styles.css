@@ -3357,6 +3357,13 @@ body.is-light-slide .navigation-buttons button {
 
   .ecosystem-line {
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    font-size: 0.5rem;
+  }
+
+  .ecosystem-line i {
+    min-width: 0.75rem;
   }
 
   .workday-line {
@@ -3709,6 +3716,16 @@ body.is-light-slide .navigation-buttons button {
 
   .news-return-clips .news-clip footer {
     display: none;
+  }
+
+  .ecosystem-layout {
+    min-height: calc(100dvh - 5.2rem);
+    padding: 2.5rem 3rem 0 0;
+  }
+
+  .ecosystem-copy h2 {
+    max-width: 9ch;
+    font-size: clamp(2.8rem, 6vw, 3.2rem);
   }
 
   .harness-layout {

@@ -251,14 +251,14 @@ const remainingSlides = [
     id: 'slide-25',
     className: 'slide--light-extension',
     theme: 'light',
-    label: 'La IA se integra a nuestro ecosistema',
+    label: 'Cuatro piezas para que la IA se convierta en coworker',
     html: `
       <div class="slide__inner ecosystem-layout">
         <div class="ecosystem-copy">
-          <p class="section-kicker">La conclusión del recorrido</p>
-          <h2>La IA se está integrando a nuestro <em>ecosistema de trabajo.</em></h2>
+          <p class="section-kicker">Cuatro piezas que considero cruciales</p>
+          <h2>Para que la IA se convierta en <em>coworker.</em></h2>
         </div>
-        <div class="ecosystem-line" aria-label="Elementos del ecosistema de trabajo"><span>Aplicaciones</span><i></i><span>Navegadores</span><i></i><span>Sistemas</span><i></i><span>Equipos</span></div>
+        <div class="ecosystem-line" aria-label="Piezas cruciales para que la IA se convierta en coworker"><span>Conectores</span><i></i><span>Skills</span><i></i><span>Rutinas</span><i></i><span>Hooks</span></div>
       </div>`,
   },
   {
