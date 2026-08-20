@@ -226,6 +226,17 @@ button {
   transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
+.navigation-buttons svg {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  place-self: center;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .navigation-buttons button:hover:not(:disabled),
 .navigation-buttons button:focus-visible:not(:disabled) {
   border-color: rgba(137, 115, 236, 0.72);
