@@ -1,14 +1,15 @@
-# AI Co-Worker Talk
+# Inteligencia Artificial aplicada al trabajo
 
-Página única de abertura com templates reutilizáveis para montagem de slides.
+Presentación web para la charla de la Facultad de Economía. La interfaz usa una estética editorial inspirada en distill.pub, navegación vertical por scroll, teclado y controles en pantalla, con adaptación para móviles.
 
-## Como usar
+## Controles
 
-- Edite `src/OpeningPage.tsx` para ajustar o texto da página inicial.
-- Crie novos blocos em `src/templates.ts` como referência para próximos slides.
-- O layout atual já vem pronto para crescer sem reaproveitar páginas extras.
+- `↓`, `→`, `Espacio`, `Enter` o scroll: avanzar.
+- `↑`, `←`, `Backspace` o scroll: volver.
+- `Home` / `End`: primera o última diapositiva.
+- Controles laterales e inferiores: navegación directa.
 
-## Comandos
+## Desarrollo
 
 ```bash
 npm install
@@ -16,7 +17,8 @@ npm run dev
 npm run build
 ```
 
-## Deploy
+## Publicación
 
-`push` em `main` dispara GitHub Pages via workflow e publica em
+Cada actualización de `main` publica automáticamente en GitHub Pages:
+
 `https://leomdsanchez.github.io/ai-coworker-talk/`
