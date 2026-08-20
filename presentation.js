@@ -3,9 +3,8 @@ const applePaperFigure = new URL('./assets/research/apple-illusion-of-thinking-f
 
 const contextPattern = [
   ...Array(8).fill('correct'),
-  'error', 'correct', 'correct', 'correct',
-  'error', 'correct', 'error', 'correct', 'correct',
-  'error', 'error', 'correct', 'error', 'error', 'correct', 'error', 'error',
+  'error', 'correct', 'correct', 'error',
+  ...Array(13).fill('error'),
 ]
 
 function contextTokenMarkup(state, index) {
@@ -102,7 +101,7 @@ const remainingSlides = [
           <header class="context-demo__header">
             <div>
               <span>Ventana de contexto</span>
-              <small><output data-context-time>00</output> / 30 s</small>
+              <small><output data-context-time>00</output> / 40 s</small>
             </div>
             <div class="context-controls" aria-label="Controles de la animación">
               <button type="button" data-context-toggle data-context-control aria-label="Pausar animación">
@@ -137,22 +136,6 @@ const remainingSlides = [
         <p class="section-kicker">La dificultad no siempre está en cada paso</p>
         <h2>Una tarea puede ser <em>simple</em> y aun así ser difícil de sostener.</h2>
         <div class="simple-task-axis" aria-hidden="true"><span>Pasos simples</span><i></i><span>Cadena larga</span></div>
-      </div>`,
-  },
-  {
-    id: 'slide-17',
-    className: 'slide--story-dark',
-    label: 'Cuantos más pasos, menor consistencia',
-    html: `
-      <div class="slide__inner consistency-layout">
-        <div class="consistency-copy">
-          <p class="section-kicker">El costo de una cadena larga</p>
-          <h2>Cuantos más pasos, más oportunidades de <em>perder consistencia.</em></h2>
-        </div>
-        <div class="consistency-steps" aria-label="Representación conceptual de una cadena que pierde consistencia">
-          <span class="is-solid">01</span><i></i><span class="is-solid">02</span><i></i><span>03</span><i></i><span>04</span><i></i><span class="is-faint">05</span>
-        </div>
-        <p class="story-note">El desafío era sostener una cadena de trabajo cada vez más larga sin desviarse del objetivo.</p>
       </div>`,
   },
   {
@@ -197,39 +180,20 @@ const remainingSlides = [
       </div>`,
   },
   {
-    id: 'slide-20',
-    className: 'slide--metric slide--light-extension',
-    theme: 'light',
-    label: 'En escala lineal el salto se vuelve visible',
-    html: `
-      <div class="slide__inner metric-layout">
-        <div class="metric-copy">
-          <p class="section-kicker">Los mismos datos, otra escala</p>
-          <h2>En horas humanas, el salto se vuelve <em>visible.</em></h2>
-        </div>
-        <div class="metric-placeholder" role="img" aria-label="Placeholder para gráfico METR en escala lineal">
-          <span>Gráfico 02 · escala lineal</span>
-          <strong>METR</strong>
-          <div class="placeholder-chart placeholder-chart--linear" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-          <small>Misma serie del slide anterior</small>
-        </div>
-      </div>`,
-  },
-  {
     id: 'slide-21',
     className: 'slide--metric slide--light-extension',
     theme: 'light',
-    label: 'La velocidad también está aumentando',
+    label: 'El horizonte de trabajo se duplica cada cuatro meses',
     html: `
       <div class="slide__inner metric-layout metric-layout--comparison">
         <div class="metric-copy">
           <p class="section-kicker">El ritmo de avance</p>
-          <h2>El horizonte no solo crece. Está creciendo <em>más rápido.</em></h2>
+          <h2>El horizonte de trabajo se <em>duplica cada cuatro meses.</em></h2>
         </div>
-        <div class="comparison-placeholder" role="img" aria-label="Placeholder para comparación del ritmo de avance">
-          <div><span>Período inicial</span><strong>9 meses</strong><i></i></div>
-          <div><span>Período reciente</span><strong>6 meses</strong><i></i></div>
-          <small>Calcular con los datos oficiales antes de publicar la conclusión</small>
+        <div class="comparison-placeholder" role="img" aria-label="El horizonte de trabajo se duplica cada cuatro meses">
+          <div><span>Horizonte de trabajo</span><strong>×2</strong><i></i></div>
+          <div><span>Tiempo de duplicación</span><strong>4 meses</strong><i></i></div>
+          <small>Tendencia observada por METR</small>
         </div>
       </div>`,
   },
@@ -264,8 +228,22 @@ const remainingSlides = [
           <p class="section-kicker">Volvemos al presente</p>
           <h2>Ahora podemos leer estas noticias de <em>otra manera.</em></h2>
         </div>
-        <div class="news-echo" aria-hidden="true">
-          <span>OpenClaw</span><span>Hermes</span><span>Cowork</span><span>Claude Code</span><span>ChatGPT Work</span><span>Codex</span><span>Paperclip</span><span>Open source</span><span>AI-first</span><span>Computer use</span><span>Reasoning</span><span>Automation</span>
+        <div class="news-return-clips" aria-label="Noticias presentadas al inicio de la charla">
+          <article class="news-clip is-visible">
+            <header><strong>REUTERS</strong><time datetime="2026-02-15">15 FEB 2026</time></header>
+            <h3>El fundador de OpenClaw se une a OpenAI</h3>
+            <footer><span>AGENTE DE CÓDIGO ABIERTO</span><b>01</b></footer>
+          </article>
+          <article class="news-clip is-visible">
+            <header><strong>ANTHROPIC</strong><time datetime="2026-01-30">30 ENE 2026</time></header>
+            <h3>El futuro de la IA en el trabajo: presentamos Cowork</h3>
+            <footer><span>TRABAJO AGÉNTICO</span><b>03</b></footer>
+          </article>
+          <article class="news-clip is-visible">
+            <header><strong>OPENAI</strong><time datetime="2026-02-02">02 FEB 2026</time></header>
+            <h3>Presentamos Codex: un centro de mando para agentes</h3>
+            <footer><span>TRABAJO MULTIAGENTE</span><b>06</b></footer>
+          </article>
         </div>
       </div>`,
   },
@@ -473,7 +451,7 @@ deck.insertAdjacentHTML('beforeend', remainingSlides.map((slide, index) => `
     id="${slide.id}"
     data-slide-index="${index + 15}"
     ${slide.theme ? `data-theme="${slide.theme}"` : ''}
-    aria-label="Diapositiva ${index + 16} de 44: ${slide.label}"
+    aria-label="Diapositiva ${index + 16} de ${remainingSlides.length + 15}: ${slide.label}"
   >${slide.html}</section>
 `).join(''))
 
@@ -512,7 +490,7 @@ const contextTime = contextDemo.querySelector('[data-context-time]')
 const contextToggle = contextDemo.querySelector('[data-context-toggle]')
 const contextRestart = contextDemo.querySelector('[data-context-restart]')
 const contextTokens = [...contextBelt.querySelectorAll('.context-token')]
-const contextDuration = 30000
+const contextDuration = 40000
 
 const burstPlacements = [
   [5, 8, 28, -4], [54, 6, 29, 3], [30, 35, 31, -2], [3, 48, 30, 2],
@@ -604,7 +582,7 @@ function restartContextAnimation(shouldPlay = true) {
 
   contextAnimations = [beltAnimation, progressAnimation, ...tokenAnimations]
   beltAnimation.addEventListener('finish', () => {
-    contextTime.textContent = '30'
+    contextTime.textContent = '40'
     syncContextControl()
     stopContextClock()
   }, { once: true })

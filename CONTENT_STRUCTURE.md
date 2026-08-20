@@ -151,7 +151,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 - **Función:** explicar cómo un error dentro de la ventana de contexto condiciona los pasos siguientes.
 - **Contenido visible:** `Cada paso depende de los anteriores.` / `Un error temprano condiciona los pasos siguientes.`
-- **Animación:** una cinta editorial integrada al fondo atraviesa la ventana de contexto durante 30 segundos; utiliza menos elementos, hace aparecer cada marcador con un rebote suave, comienza con checks verdes, introduce una cruz roja aislada y termina con una concentración creciente de errores.
+- **Animación:** una cinta editorial integrada al fondo atraviesa la ventana de contexto durante 40 segundos; utiliza pocos elementos, hace aparecer cada marcador con un rebote suave, comienza con checks verdes, acumula errores y reserva los últimos diez segundos exclusivamente para cruces rojas.
 - **Interacción:** se inicia automáticamente cada vez que el slide entra en foco, se detiene al salir y dispone de controles sutiles para pausar, continuar y reiniciar.
 - **Narrativa oral:** el modelo no toma cada decisión desde cero; trabaja condicionado por el contexto que acaba de producir.
 
@@ -161,13 +161,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Contenido visible:** `La dificultad podía estar en una tarea simple con muchos pasos.`
 - **Contraste:** complejidad de cada paso frente a longitud de la cadena.
 
-#### 20 — Cuantos más pasos, menor consistencia
-
-- **Función:** cerrar el diagnóstico.
-- **Contenido visible:** `El desafío era sostener una cadena de trabajo cada vez más larga sin perder consistencia.`
-- **Visual:** degradación progresiva de una misma cadena; sin introducir un nuevo diagrama conceptual.
-
-#### 21 — Entra el harness
+#### 20 — Entra el harness
 
 - **Función:** presentar la capa que estructura y sostiene el trabajo del agente.
 - **Contenido visible:** `El sistema conserva el contexto, planifica, actúa, observa, ajusta y entrega.`
@@ -176,34 +170,28 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ### Acto IV — De tareas a objetivos
 
-#### 22 — La capacidad de mantenerse trabajando aumentó
+#### 21 — La capacidad de mantenerse trabajando aumentó
 
 - **Función:** introducir la evidencia cuantitativa.
 - **Contenido visible:** `El horizonte de trabajo de los agentes empezó a crecer.`
 - **Visual:** gráfico oficial de METR en escala logarítmica.
 - **Fuente requerida:** metodología y serie vigente de METR sobre task-completion time horizons.
 
-#### 23 — En escala lineal, el salto se vuelve visible
+#### 22 — El horizonte se duplica cada cuatro meses
 
-- **Función:** revelar la magnitud que la escala logarítmica comprime.
-- **Contenido visible:** `En horas humanas, el cambio es mucho mayor de lo que parece.`
-- **Visual:** exactamente la misma serie anterior, ahora en escala lineal.
+- **Función:** explicitar la velocidad de expansión del horizonte de trabajo.
+- **Contenido visible:** `El horizonte de trabajo se duplica cada cuatro meses.`
+- **Visual:** comparación editorial entre el factor de crecimiento `×2` y el tiempo de duplicación de `4 meses`.
+- **Fuente de referencia:** tendencia observada por METR.
 
-#### 24 — La velocidad también está aumentando
-
-- **Función:** comparar el ritmo de avance reciente con el período anterior.
-- **Contenido visible provisional:** `El horizonte no solo crece: está creciendo más rápido.`
-- **Visual:** comparación entre los primeros nueve meses y los seis meses más recientes.
-- **Pendiente crítico:** calcular y documentar los períodos exactos a partir de los datos oficiales.
-
-#### 25 — De algunas horas a una jornada completa
+#### 23 — De algunas horas a una jornada completa
 
 - **Función:** conectar la tendencia con una consecuencia laboral reconocible.
 - **Contenido visible provisional:** `El siguiente umbral es una jornada laboral completa.`
 - **Apoyo provisional:** proyección cercana a ocho horas hasta finales de 2026.
 - **Pendiente crítico:** presentar como proyección, identificar el modelo de extrapolación y mostrar incertidumbre; no tratarla como hecho.
 
-#### 26 — Modo 3: Agéntica
+#### 24 — Modo 3: Agéntica
 
 - **Función:** nombrar el salto de tareas a objetivos.
 - **Contenido visible:** `La IA deja de cumplir tareas aisladas para perseguir objetivos más complejos.`
@@ -211,31 +199,31 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ### Acto V — La IA se integra al trabajo
 
-#### 27 — Volvemos al presente
+#### 25 — Volvemos al presente
 
 - **Función:** recuperar la saturación inicial después de haber explicado su origen.
 - **Contenido visible:** `Ahora podemos leer estas noticias de otra manera.`
-- **Visual:** los mismos recortes de la apertura, congelados y reorganizados por significado.
+- **Visual:** tres recortes estáticos de la apertura — OpenClaw, Cowork y Codex — para recuperar visualmente las señales del presente.
 
-#### 28 — La IA se está integrando a nuestro ecosistema
+#### 26 — La IA se está integrando a nuestro ecosistema
 
 - **Función:** dar una interpretación única a las señales del mercado.
 - **Contenido visible:** `La inteligencia artificial se está integrando a nuestro ecosistema de trabajo.`
 - **Visual:** la línea temporal desemboca en aplicaciones, navegadores, sistemas y equipos.
 
-#### 29 — Antes la usábamos durante nuestra jornada
+#### 27 — Antes la usábamos durante nuestra jornada
 
 - **Función:** establecer el “antes” del cambio operativo.
 - **Contenido visible:** `Usábamos la IA como una herramienta durante nuestra jornada laboral.`
 - **Visual:** jornada humana con intervenciones puntuales de IA.
 
-#### 30 — Ahora la IA tiene su propia jornada
+#### 28 — Ahora la IA tiene su propia jornada
 
 - **Función:** presentar el “ahora” con una imagen concreta.
 - **Contenido visible:** `Ahora la IA puede tener su propia jornada y colaborar como parte del equipo.`
 - **Idea central:** `Ya no delegamos solamente tareas. Delegamos objetivos recurrentes.`
 
-#### 31 — Modo 4: Integrada
+#### 29 — Modo 4: Integrada
 
 - **Función:** completar el mapa recurrente.
 - **Mapa:** las cuatro etapas visibles y desbloqueadas.
@@ -243,13 +231,13 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ### Acto VI — Cómo se integra un agente
 
-#### 32 — Integración en la práctica
+#### 30 — Integración en la práctica
 
 - **Función:** pasar de la tesis a ejemplos observables.
 - **Contenido visible:** `¿Cómo se ve una IA integrada al trabajo?`
 - **Ritmo:** pantalla corta que prepara una demostración.
 
-#### 33 — Mi integración
+#### 31 — Mi integración
 
 - **Función:** mostrar un caso propio y verificable.
 - **Contenido visible:** nombre breve del flujo y el objetivo recurrente que resuelve.
@@ -257,63 +245,63 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 - **Plan B obligatorio:** grabación breve o capturas si la demostración falla.
 - **Material pendiente:** definir cuál integración personal se mostrará y qué datos deben ocultarse.
 
-#### 34 — Otros agentes ya están trabajando así
+#### 32 — Otros agentes ya están trabajando así
 
 - **Función:** ampliar el caso propio sin convertir el slide en catálogo.
 - **Contenido visible:** dos o tres ejemplos con una sola frase de significado por caso.
 - **Formato:** video integrado o clips muy breves.
 - **Material pendiente:** seleccionar videos, confirmar derechos de uso y preparar fallback local.
 
-#### 35 — ¿Cómo se integra un agente de IA?
+#### 33 — ¿Cómo se integra un agente de IA?
 
 - **Función:** abrir el bloque técnico con una pregunta simple.
 - **Contenido visible:** `¿Cómo se integra un agente de IA?`
 - **Visual:** cambio de ritmo antes de desmontar la arquitectura.
 
-#### 36 — Un agente es un sistema, no solo un modelo
+#### 34 — Un agente es un sistema, no solo un modelo
 
 - **Función:** definir agente con lenguaje operativo.
 - **Contenido visible:** `Un agente combina un modelo, instrucciones, herramientas, contexto y un ciclo de ejecución.`
 - **Narrativa oral:** el modelo decide; el sistema le permite observar, actuar y continuar.
 
-#### 37 — Herramientas y ambiente
+#### 35 — Herramientas y ambiente
 
 - **Función:** presentar el mapa técnico antes de explicar sus piezas.
 - **Contenido visible:** `MCP · Skills · Plugins · Agendamientos · Hooks`
 - **Visual:** una única arquitectura funcional que se reutiliza en las pantallas siguientes.
 
-#### 38 — MCP conecta al agente con el mundo
+#### 36 — MCP conecta al agente con el mundo
 
 - **Función:** explicar la capa de conexión.
 - **Contenido visible:** `MCP estandariza cómo un agente descubre y utiliza herramientas y datos.`
 - **Ejemplo:** un único recorrido relevante para la demo final.
 - **Fuente requerida:** especificación oficial y documentación vigente.
 
-#### 39 — Skills convierten experiencia en procedimiento
+#### 37 — Skills convierten experiencia en procedimiento
 
 - **Función:** explicar cómo se encapsulan instrucciones y métodos reutilizables.
 - **Contenido visible:** `Una skill enseña al agente cómo ejecutar bien un tipo de trabajo.`
 - **Ejemplo:** una skill concreta utilizada en la demostración.
 
-#### 40 — Plugins reúnen capacidades
+#### 38 — Plugins reúnen capacidades
 
 - **Función:** mostrar cómo herramientas, skills y aplicaciones se distribuyen como un conjunto.
 - **Contenido visible provisional:** `Un plugin reúne capacidades que el agente puede usar en un dominio.`
 - **Pendiente:** ajustar la definición al producto y plataforma mencionados en la charla.
 
-#### 41 — Agendamientos y hooks hacen el trabajo recurrente
+#### 39 — Agendamientos y hooks hacen el trabajo recurrente
 
 - **Función:** conectar agentes con operación continua.
 - **Contenido visible:** `Los agendamientos inician trabajo por tiempo. Los hooks lo inician por eventos.`
 - **Ejemplo:** un objetivo diario y un evento real del flujo mostrado.
 
-#### 42 — El esquema funcional completo
+#### 40 — El esquema funcional completo
 
 - **Función:** sintetizar el bloque técnico antes de la demo.
 - **Flujo visible:** evento u objetivo → agente → instrucciones/contexto → herramientas → verificación → resultado → siguiente ejecución.
 - **Regla visual:** reutilizar la arquitectura de la pantalla 37 y revelar ahora el recorrido completo.
 
-#### 43 — Demo práctica
+#### 41 — Demo práctica
 
 - **Función:** demostrar que el sistema puede completar un objetivo real de punta a punta.
 - **Contenido visible:** nombre del objetivo, estado actual y criterio de éxito.
@@ -322,7 +310,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ### Acto VII — Cierre
 
-#### 44 — El trabajo cambia de forma
+#### 42 — El trabajo cambia de forma
 
 - **Función:** resolver la tesis inicial sin repetirla literalmente.
 - **Contenido visible propuesto:** `La pregunta ya no es solamente qué podemos hacer con IA.` / `Es qué trabajo podemos rediseñar junto a ella.`
