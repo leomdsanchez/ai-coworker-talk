@@ -381,6 +381,7 @@ button {
   letter-spacing: -0.06em;
   text-align: center;
   text-wrap: balance;
+  transition: opacity 360ms ease, transform 520ms ease, filter 520ms ease;
 }
 
 .news-canvas {
@@ -417,6 +418,17 @@ button {
   translate: 0;
   scale: 1;
   transition-delay: 0s;
+}
+
+.news-burst-copy {
+  pointer-events: none;
+  box-shadow: 0 2rem 5.5rem rgba(0, 0, 0, 0.48);
+}
+
+.slide--news.is-bursting .news-title {
+  opacity: 0.12;
+  filter: blur(2px);
+  transform: scale(0.94);
 }
 
 .news-clip::after {
@@ -577,6 +589,37 @@ button {
   color: rgba(216, 215, 220, 0.68);
   font: inherit;
   letter-spacing: 0.12em;
+}
+
+.calm-layout {
+  position: relative;
+  display: grid;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  place-items: center;
+  overflow: hidden;
+}
+
+.calm-layout h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #efedf2;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(6rem, 18vw, 18rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+}
+
+.calm-symbol {
+  position: absolute;
+  color: rgba(128, 102, 234, 0.1);
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(30rem, 70vw, 72rem);
+  font-weight: 700;
+  line-height: 0.7;
+  transform: rotate(7deg);
+  user-select: none;
 }
 
 @keyframes scroll-pulse {
@@ -760,6 +803,14 @@ button {
 
   .news-legend {
     bottom: 0.25rem;
+  }
+
+  .calm-layout {
+    min-height: calc(100dvh - 7.1rem);
+  }
+
+  .calm-layout h2 {
+    font-size: clamp(5.5rem, 27vw, 10rem);
   }
 
   .deck-controls {
