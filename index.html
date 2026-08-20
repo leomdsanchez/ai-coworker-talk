@@ -9,9 +9,76 @@
       content="Presentación: Inteligencia Artificial aplicada al trabajo."
     />
     <title>Inteligencia Artificial aplicada al trabajo</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="presentation-shell">
+      <header class="deck-header" aria-label="Identificación de la presentación">
+        <span class="deck-header__mark" aria-hidden="true"></span>
+        <span>IA aplicada al trabajo</span>
+      </header>
+
+      <nav class="progress-rail" aria-label="Navegación de diapositivas">
+        <button class="progress-dot is-active" type="button" data-slide-target="0" aria-label="Ir a la diapositiva 1" aria-current="step"><span>01</span></button>
+        <button class="progress-dot" type="button" data-slide-target="1" aria-label="Ir a la diapositiva 2"><span>02</span></button>
+        <button class="progress-dot" type="button" data-slide-target="2" aria-label="Ir a la diapositiva 3"><span>03</span></button>
+      </nav>
+
+      <main class="deck">
+        <section class="slide slide--cover" id="slide-1" data-slide-index="0" aria-label="Diapositiva 1 de 3">
+          <div class="slide__inner cover-layout">
+            <span class="cover-line" aria-hidden="true"></span>
+            <h1>
+              Inteligencia Artificial
+              <span>aplicada al trabajo</span>
+            </h1>
+            <div class="scroll-cue" aria-hidden="true">
+              <span>Deslizar</span>
+              <i></i>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide slide--statement" id="slide-2-1" data-slide-index="1" aria-label="Diapositiva 2 de 3">
+          <div class="slide__inner statement-layout">
+            <p class="statement">
+              La IA está dejando de ser una herramienta para convertirse en una
+              <em>compañera de trabajo.</em>
+            </p>
+            <div class="slide-legend">
+              <span aria-hidden="true"></span>
+              Cambio de paradigma
+            </div>
+          </div>
+        </section>
+
+        <section class="slide slide--statement slide--statement-final" id="slide-2-2" data-slide-index="2" aria-label="Diapositiva 3 de 3">
+          <div class="slide__inner statement-layout">
+            <p class="statement">
+              En los próximos años me atrevo a decir que la IA será quien ejecute
+              <em>gran parte del trabajo.</em>
+            </p>
+            <div class="slide-legend">
+              <span aria-hidden="true"></span>
+              Cambio de paradigma
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="deck-controls" aria-label="Controles de la presentación">
+        <span class="slide-count">
+          <strong>01</strong>
+          <i></i>
+          03
+        </span>
+        <div class="navigation-buttons">
+          <button type="button" data-direction="previous" aria-label="Diapositiva anterior" disabled><span aria-hidden="true">←</span></button>
+          <button type="button" data-direction="next" aria-label="Siguiente diapositiva"><span aria-hidden="true">→</span></button>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./presentation.js"></script>
   </body>
 </html>
