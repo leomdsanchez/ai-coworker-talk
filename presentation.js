@@ -50,6 +50,7 @@ function syncNews(nextVisible) {
 function syncNavigation(index) {
   activeIndex = clamp(index)
   count.textContent = String(activeIndex + 1).padStart(2, '0')
+  document.body.classList.toggle('is-light-slide', slides[activeIndex].dataset.theme === 'light')
 
   previousButton.disabled = isNewsBursting || activeIndex === 0
   nextButton.disabled = isNewsBursting || activeIndex === slides.length - 1

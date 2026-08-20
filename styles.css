@@ -103,12 +103,14 @@ button {
   font-weight: 650;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  transition: color 320ms ease;
 }
 
 .deck-header__mark {
   width: 0.36rem;
   height: 0.36rem;
   background: #8066ea;
+  transition: background 320ms ease;
 }
 
 .progress-rail {
@@ -192,17 +194,20 @@ button {
   color: rgba(216, 215, 220, 0.33);
   font-size: 0.62rem;
   letter-spacing: 0.12em;
+  transition: color 320ms ease;
 }
 
 .slide-count strong {
   color: rgba(216, 215, 220, 0.78);
   font-weight: 650;
+  transition: color 320ms ease;
 }
 
 .slide-count i {
   width: 2.3rem;
   height: 1px;
   background: rgba(216, 215, 220, 0.19);
+  transition: background 320ms ease;
 }
 
 .navigation-buttons {
@@ -622,6 +627,123 @@ button {
   user-select: none;
 }
 
+.slide--timeline-intro {
+  color: #1b1a1e;
+  background: #e9e6df;
+}
+
+.slide--timeline-intro::before {
+  opacity: 0.48;
+  background-image: linear-gradient(rgba(20, 19, 23, 0.055) 1px, transparent 1px);
+}
+
+.slide--timeline-intro::after {
+  background: rgba(92, 66, 199, 0.24);
+}
+
+.timeline-intro-layout {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100dvh - clamp(4rem, 10vw, 11rem));
+  padding: clamp(5rem, 8vw, 7rem) clamp(3rem, 7vw, 7rem) clamp(3.8rem, 6vw, 5.5rem) 0;
+}
+
+.timeline-intro-copy {
+  align-self: center;
+}
+
+.timeline-intro-copy p {
+  margin: 0 0 clamp(1.5rem, 3vw, 2.7rem);
+  color: #694fd5;
+  font-size: clamp(0.68rem, 0.9vw, 0.86rem);
+  font-weight: 760;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.timeline-intro-copy h2 {
+  max-width: 10ch;
+  margin: 0;
+  color: #242329;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(4.7rem, 10vw, 10.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.timeline-intro-copy h2 em {
+  display: block;
+  color: #6a50d4;
+  font-weight: 400;
+}
+
+.timeline-seed {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(27, 26, 30, 0.54);
+}
+
+.timeline-seed__dot {
+  width: 0.78rem;
+  height: 0.78rem;
+  border: 3px solid #e9e6df;
+  border-radius: 50%;
+  background: #694fd5;
+  box-shadow: 0 0 0 1px #694fd5;
+}
+
+.timeline-seed__line {
+  height: 1px;
+  background: linear-gradient(90deg, #694fd5, rgba(105, 79, 213, 0.12));
+}
+
+.timeline-seed__label {
+  font-size: 0.61rem;
+  font-weight: 720;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body.is-light-slide .deck-header {
+  color: rgba(27, 26, 30, 0.56);
+}
+
+body.is-light-slide .deck-header__mark {
+  background: #694fd5;
+}
+
+body.is-light-slide .progress-dot {
+  color: rgba(27, 26, 30, 0.32);
+}
+
+body.is-light-slide .progress-dot:hover,
+body.is-light-slide .progress-dot:focus-visible,
+body.is-light-slide .progress-dot.is-active {
+  color: #694fd5;
+}
+
+body.is-light-slide .slide-count {
+  color: rgba(27, 26, 30, 0.34);
+}
+
+body.is-light-slide .slide-count strong {
+  color: rgba(27, 26, 30, 0.76);
+}
+
+body.is-light-slide .slide-count i {
+  background: rgba(27, 26, 30, 0.2);
+}
+
+body.is-light-slide .navigation-buttons button {
+  border-color: rgba(27, 26, 30, 0.16);
+  color: rgba(27, 26, 30, 0.72);
+  background: rgba(233, 230, 223, 0.78);
+}
+
 @keyframes scroll-pulse {
   0% { transform: translateX(-110%); }
   55%, 100% { transform: translateX(210%); }
@@ -811,6 +933,21 @@ button {
 
   .calm-layout h2 {
     font-size: clamp(5.5rem, 27vw, 10rem);
+  }
+
+  .timeline-intro-layout {
+    min-height: calc(100dvh - 7.1rem);
+    padding: 5rem 2.2rem 2.2rem 0;
+  }
+
+  .timeline-intro-copy h2 {
+    max-width: 8ch;
+    font-size: clamp(4.3rem, 18vw, 7.2rem);
+    line-height: 0.9;
+  }
+
+  .timeline-seed {
+    gap: 0.72rem;
   }
 
   .deck-controls {
