@@ -2,7 +2,7 @@
 
 Presentación web para la charla de la Facultad de Economía. La interfaz usa una estética editorial inspirada en distill.pub, navegación vertical por scroll, teclado y controles en pantalla, con adaptación para móviles.
 
-Contenido actual: diapositivas 1, 2.1, 2.2 y una única diapositiva 3 con diez noticias que aparecen progresivamente sin desplazar el viewport.
+Contenido actual: diapositivas 1, 2.1, 2.2 y una única diapositiva 3 con doce noticias en español que aparecen progresivamente sin desplazar el viewport.
 
 Fuentes de los recortes: Reuters, Nous Research, Anthropic, OpenAI, Paperclip, GitHub y Gartner.
 

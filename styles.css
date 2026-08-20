@@ -549,6 +549,22 @@ button {
   transform: rotate(2.4deg);
 }
 
+.clip-reasoning {
+  top: 4%;
+  left: 33%;
+  z-index: 10;
+  width: 35%;
+  transform: rotate(-1.4deg);
+}
+
+.clip-automation {
+  top: 49%;
+  left: 50%;
+  z-index: 11;
+  width: 37%;
+  transform: translate(-50%, -50%) rotate(1deg);
+}
+
 .news-legend {
   position: absolute;
   bottom: 0;
@@ -729,6 +745,17 @@ button {
     top: 44%;
     right: 3%;
     width: 68%;
+  }
+
+  .clip-reasoning {
+    top: 8%;
+    left: 10%;
+    width: 68%;
+  }
+
+  .clip-automation {
+    top: 52%;
+    width: 72%;
   }
 
   .news-legend {
