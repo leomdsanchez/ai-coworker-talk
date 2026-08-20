@@ -399,7 +399,24 @@ button {
   color: #171719;
   background: #e8e5df;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.34);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 1.4rem;
+  scale: 0.94;
   transform-origin: center;
+  transition:
+    opacity 420ms ease,
+    visibility 0s linear 420ms,
+    translate 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    scale 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.news-clip.is-visible {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+  scale: 1;
+  transition-delay: 0s;
 }
 
 .news-clip::after {
@@ -537,6 +554,13 @@ button {
   bottom: 0;
   left: 0;
   z-index: 20;
+}
+
+.news-progress {
+  margin-left: 0.35rem;
+  color: rgba(216, 215, 220, 0.68);
+  font: inherit;
+  letter-spacing: 0.12em;
 }
 
 @keyframes scroll-pulse {
