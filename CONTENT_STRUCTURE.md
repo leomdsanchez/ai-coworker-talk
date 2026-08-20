@@ -2,7 +2,7 @@
 
 Fuente principal: [página «Contenido» en Notion](https://app.notion.com/p/3c138c9506cb80689206df45306d0a6e)
 
-Estado: arquitectura narrativa preparada. Las pantallas 01–13 ya están implementadas; las siguientes están listas para diseño, investigación y producción.
+Estado: las 42 pantallas de la arquitectura narrativa están representadas en la presentación. Los bloques que aún dependen de investigación o de material del presentador aparecen como placeholders explícitos.
 
 ## Trabajo de comunicación
 
@@ -317,8 +317,9 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 ## Estado de producción
 
-- **Implementadas:** pantallas 01–13, incluida la interacción progresiva de noticias y las dos primeras apariciones del mapa de modos.
-- **Listas para diseñar:** pantalla 14, pantallas 16–21, 24–30, 33–35 y 40–42.
+- **Estructura implementada:** pantallas 01–42, incluida la interacción progresiva de noticias y las cuatro apariciones del mapa de modos.
+- **Con contenido y diseño base:** pantallas 01–14, 16–19, 24–30, 33–40 y 42.
+- **Representadas con placeholder:** pantallas 15, 20–23, 31–32 y 41.
 - **Requieren investigación antes del copy final:** 15, 20–23, 36 y 38.
 - **Requieren material del presentador:** 19, 31, 32 y 41.
 

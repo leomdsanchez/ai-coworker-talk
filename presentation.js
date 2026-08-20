@@ -1,7 +1,449 @@
 const deck = document.querySelector('.deck')
+
+function modesMarkup(unlockedCount, heading, emphasis) {
+  const modes = [
+    ['Conversacional', 'Preguntar y responder'],
+    ['Delegada', 'Entregar una tarea'],
+    ['Agéntica', 'Perseguir un objetivo'],
+    ['Integrada', 'Operar de forma recurrente'],
+  ]
+
+  return `
+    <div class="slide__inner modes-layout">
+      <div class="modes-heading">
+        <p>Los modos de utilizar IA</p>
+        <h2>${heading} <em>${emphasis}</em></h2>
+      </div>
+      <ol class="modes-track" aria-label="Evolución de los modos de utilizar inteligencia artificial">
+        ${modes.map(([name, description], index) => {
+          const step = index + 1
+          const state = step === unlockedCount ? 'is-unlocked' : step < unlockedCount ? 'is-complete' : 'is-locked'
+          const content = step <= unlockedCount
+            ? `<strong>${name}</strong><small>${description}</small>`
+            : '<strong>Por revelar</strong>'
+          const aria = step > unlockedCount ? ` aria-label="Etapa ${step} aún no revelada"` : ''
+          return `<li class="mode-step ${state}"${aria}><span>0${step}</span>${content}</li>`
+        }).join('')}
+      </ol>
+    </div>`
+}
+
+const remainingSlides = [
+  {
+    id: 'slide-13',
+    className: 'slide--story-dark',
+    label: 'Actuar no era lo mismo que terminar',
+    html: `
+      <div class="slide__inner story-layout">
+        <p class="section-kicker">El problema: consistencia</p>
+        <h2 class="story-title">Tener herramientas no garantizaba <em>terminar el trabajo.</em></h2>
+        <p class="story-note">Actuar una vez era posible. Mantener una cadena larga y coherente seguía siendo difícil.</p>
+      </div>`,
+  },
+  {
+    id: 'slide-14',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Razonar tampoco garantiza consistencia',
+    html: `
+      <div class="slide__inner evidence-layout">
+        <div class="evidence-copy">
+          <p class="section-kicker">Evidencia por incorporar</p>
+          <h2>Razonar tampoco garantiza <em>consistencia.</em></h2>
+          <p>La afirmación final se ajustará a los resultados exactos de la fuente seleccionada.</p>
+        </div>
+        <div class="media-placeholder media-placeholder--paper" role="img" aria-label="Placeholder para paper de Apple sobre razonamiento o tareas de múltiples pasos">
+          <span>Paper / fuente</span>
+          <strong>Apple · por confirmar</strong>
+          <small>Insertar recorte, título y conclusión verificable</small>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-15',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Cada paso depende de los anteriores',
+    html: `
+      <div class="slide__inner process-layout">
+        <div class="process-heading">
+          <p class="section-kicker">El problema multi-step</p>
+          <h2>Cada paso depende de <em>los anteriores.</em></h2>
+        </div>
+        <ol class="process-chain" aria-label="Cadena de trabajo de múltiples pasos">
+          <li><span>01</span><strong>Decidir</strong></li>
+          <li><span>02</span><strong>Actuar</strong></li>
+          <li><span>03</span><strong>Observar</strong></li>
+          <li><span>04</span><strong>Volver a decidir</strong></li>
+        </ol>
+        <p class="process-note">Un error temprano puede alterar todas las decisiones siguientes.</p>
+      </div>`,
+  },
+  {
+    id: 'slide-16',
+    className: 'slide--violet-extension',
+    label: 'Una tarea simple también puede ser difícil',
+    html: `
+      <div class="slide__inner simple-task-layout">
+        <p class="section-kicker">La dificultad no siempre está en cada paso</p>
+        <h2>Una tarea puede ser <em>simple</em> y aun así ser difícil de sostener.</h2>
+        <div class="simple-task-axis" aria-hidden="true"><span>Pasos simples</span><i></i><span>Cadena larga</span></div>
+      </div>`,
+  },
+  {
+    id: 'slide-17',
+    className: 'slide--story-dark',
+    label: 'Cuantos más pasos, menor consistencia',
+    html: `
+      <div class="slide__inner consistency-layout">
+        <div class="consistency-copy">
+          <p class="section-kicker">El costo de una cadena larga</p>
+          <h2>Cuantos más pasos, más oportunidades de <em>perder consistencia.</em></h2>
+        </div>
+        <div class="consistency-steps" aria-label="Representación conceptual de una cadena que pierde consistencia">
+          <span class="is-solid">01</span><i></i><span class="is-solid">02</span><i></i><span>03</span><i></i><span>04</span><i></i><span class="is-faint">05</span>
+        </div>
+        <p class="story-note">El desafío era sostener una cadena de trabajo cada vez más larga sin desviarse del objetivo.</p>
+      </div>`,
+  },
+  {
+    id: 'slide-18',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Entra el harness',
+    html: `
+      <div class="slide__inner harness-layout">
+        <div class="harness-copy">
+          <p class="section-kicker">Una estructura alrededor del modelo</p>
+          <h2>Entra el <em>harness.</em></h2>
+          <p>El modelo propone. El sistema organiza, ejecuta, observa, verifica y recupera.</p>
+        </div>
+        <ol class="harness-loop" aria-label="Flujo simplificado de un harness">
+          <li><span>01</span><strong>Objetivo</strong></li>
+          <li><span>02</span><strong>Plan</strong></li>
+          <li><span>03</span><strong>Acción</strong></li>
+          <li><span>04</span><strong>Observación</strong></li>
+          <li><span>05</span><strong>Verificación</strong></li>
+        </ol>
+      </div>`,
+  },
+  {
+    id: 'slide-19',
+    className: 'slide--metric slide--light-extension',
+    theme: 'light',
+    label: 'El horizonte de trabajo aumentó',
+    html: `
+      <div class="slide__inner metric-layout">
+        <div class="metric-copy">
+          <p class="section-kicker">La capacidad de mantenerse trabajando aumentó</p>
+          <h2>El horizonte de trabajo empezó a <em>crecer.</em></h2>
+        </div>
+        <div class="metric-placeholder" role="img" aria-label="Placeholder para gráfico METR en escala logarítmica">
+          <span>Gráfico 01 · escala logarítmica</span>
+          <strong>METR</strong>
+          <div class="placeholder-chart placeholder-chart--log" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <small>Dataset y metodología por incorporar</small>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-20',
+    className: 'slide--metric slide--light-extension',
+    theme: 'light',
+    label: 'En escala lineal el salto se vuelve visible',
+    html: `
+      <div class="slide__inner metric-layout">
+        <div class="metric-copy">
+          <p class="section-kicker">Los mismos datos, otra escala</p>
+          <h2>En horas humanas, el salto se vuelve <em>visible.</em></h2>
+        </div>
+        <div class="metric-placeholder" role="img" aria-label="Placeholder para gráfico METR en escala lineal">
+          <span>Gráfico 02 · escala lineal</span>
+          <strong>METR</strong>
+          <div class="placeholder-chart placeholder-chart--linear" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <small>Misma serie del slide anterior</small>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-21',
+    className: 'slide--metric slide--light-extension',
+    theme: 'light',
+    label: 'La velocidad también está aumentando',
+    html: `
+      <div class="slide__inner metric-layout metric-layout--comparison">
+        <div class="metric-copy">
+          <p class="section-kicker">El ritmo de avance</p>
+          <h2>El horizonte no solo crece. Está creciendo <em>más rápido.</em></h2>
+        </div>
+        <div class="comparison-placeholder" role="img" aria-label="Placeholder para comparación del ritmo de avance">
+          <div><span>Período inicial</span><strong>9 meses</strong><i></i></div>
+          <div><span>Período reciente</span><strong>6 meses</strong><i></i></div>
+          <small>Calcular con los datos oficiales antes de publicar la conclusión</small>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-22',
+    className: 'slide--violet-extension',
+    label: 'El siguiente umbral es una jornada completa',
+    html: `
+      <div class="slide__inner horizon-layout">
+        <div class="horizon-value">8<span>h</span></div>
+        <div class="horizon-copy">
+          <p class="section-kicker">Futuro próximo · proyección</p>
+          <h2>El siguiente umbral es una <em>jornada laboral completa.</em></h2>
+          <small>Proyección para finales de 2026 · fuente y rango de incertidumbre pendientes</small>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-23',
+    className: 'slide--modes',
+    theme: 'light',
+    label: 'Tercera forma de utilizar IA, agéntica',
+    html: modesMarkup(3, 'Entonces, perseguimos', 'objetivos.'),
+  },
+  {
+    id: 'slide-24',
+    className: 'slide--news-return',
+    label: 'Volvemos al presente',
+    html: `
+      <div class="slide__inner news-return-layout">
+        <div class="news-return-copy">
+          <p class="section-kicker">Volvemos al presente</p>
+          <h2>Ahora podemos leer estas noticias de <em>otra manera.</em></h2>
+        </div>
+        <div class="news-echo" aria-hidden="true">
+          <span>OpenClaw</span><span>Hermes</span><span>Cowork</span><span>Claude Code</span><span>ChatGPT Work</span><span>Codex</span><span>Paperclip</span><span>Open source</span><span>AI-first</span><span>Computer use</span><span>Reasoning</span><span>Automation</span>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-25',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'La IA se integra a nuestro ecosistema',
+    html: `
+      <div class="slide__inner ecosystem-layout">
+        <div class="ecosystem-copy">
+          <p class="section-kicker">La conclusión del recorrido</p>
+          <h2>La IA se está integrando a nuestro <em>ecosistema de trabajo.</em></h2>
+        </div>
+        <div class="ecosystem-line" aria-label="Elementos del ecosistema de trabajo"><span>Aplicaciones</span><i></i><span>Navegadores</span><i></i><span>Sistemas</span><i></i><span>Equipos</span></div>
+      </div>`,
+  },
+  {
+    id: 'slide-26',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Antes usábamos IA durante nuestra jornada',
+    html: `
+      <div class="slide__inner workday-layout">
+        <span class="workday-index">Antes</span>
+        <h2>Usábamos la IA como una <em>herramienta</em> durante nuestra jornada.</h2>
+        <div class="workday-line" aria-hidden="true"><i></i><b></b><i></i><i></i><b></b><i></i></div>
+        <p>Intervenciones puntuales dentro del trabajo humano.</p>
+      </div>`,
+  },
+  {
+    id: 'slide-27',
+    className: 'slide--violet-extension',
+    label: 'Ahora la IA puede tener su propia jornada',
+    html: `
+      <div class="slide__inner workday-layout workday-layout--now">
+        <span class="workday-index">Ahora</span>
+        <h2>La IA puede tener su propia jornada y colaborar como <em>parte del equipo.</em></h2>
+        <div class="workday-line" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+        <p>Ya no delegamos solamente tareas. Delegamos objetivos recurrentes.</p>
+      </div>`,
+  },
+  {
+    id: 'slide-28',
+    className: 'slide--modes',
+    theme: 'light',
+    label: 'Cuarta forma de utilizar IA, integrada',
+    html: modesMarkup(4, 'Finalmente, la IA se', 'integra.'),
+  },
+  {
+    id: 'slide-29',
+    className: 'slide--story-dark',
+    label: 'Integración en la práctica',
+    html: `
+      <div class="slide__inner story-layout story-layout--question">
+        <p class="section-kicker">Integración en la práctica</p>
+        <h2 class="story-title">¿Cómo se ve una IA <em>integrada al trabajo?</em></h2>
+        <p class="story-note">Primero, un caso real. Después, la arquitectura que lo hace posible.</p>
+      </div>`,
+  },
+  {
+    id: 'slide-30',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Ejemplo de integración personal',
+    html: `
+      <div class="slide__inner demo-case-layout">
+        <div class="demo-case-copy">
+          <p class="section-kicker">Ejemplo 01 · integración propia</p>
+          <h2>Un objetivo recurrente ejecutado <em>de punta a punta.</em></h2>
+          <p>Definir el flujo, el resultado esperado y los datos que deben ocultarse.</p>
+        </div>
+        <div class="media-placeholder media-placeholder--demo" role="img" aria-label="Placeholder para demostración de una integración propia">
+          <span>Demo en vivo</span><strong>Integración por definir</strong><small>Preparar grabación de respaldo</small>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-31',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Otros ejemplos de agentes integrados',
+    html: `
+      <div class="slide__inner video-examples-layout">
+        <div class="video-examples-heading"><p class="section-kicker">Otros ejemplos</p><h2>Los agentes ya están trabajando <em>así.</em></h2></div>
+        <div class="video-placeholders">
+          <div class="media-placeholder" role="img" aria-label="Placeholder para primer video"><span>Video 01</span><strong>Ejemplo por seleccionar</strong><small>Clip breve + fallback local</small></div>
+          <div class="media-placeholder" role="img" aria-label="Placeholder para segundo video"><span>Video 02</span><strong>Ejemplo por seleccionar</strong><small>Clip breve + fallback local</small></div>
+        </div>
+      </div>`,
+  },
+  {
+    id: 'slide-32',
+    className: 'slide--violet-extension',
+    label: 'Cómo se integra un agente de IA',
+    html: `
+      <div class="slide__inner simple-task-layout">
+        <p class="section-kicker">Abrimos el sistema</p>
+        <h2>¿Cómo se integra un <em>agente de IA?</em></h2>
+        <div class="simple-task-axis" aria-hidden="true"><span>Modelo</span><i></i><span>Sistema</span></div>
+      </div>`,
+  },
+  {
+    id: 'slide-33',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Un agente es un sistema',
+    html: `
+      <div class="slide__inner agent-definition-layout">
+        <p class="section-kicker">Una definición operativa</p>
+        <h2>Un agente es un <em>sistema</em>, no solo un modelo.</h2>
+        <div class="agent-equation" aria-label="Componentes de un agente"><span>Modelo</span><b>+</b><span>Instrucciones</span><b>+</b><span>Herramientas</span><b>+</b><span>Contexto</span><b>+</b><span>Ciclo</span></div>
+      </div>`,
+  },
+  {
+    id: 'slide-34',
+    className: 'slide--tech-dark',
+    label: 'Herramientas y ambiente',
+    html: `
+      <div class="slide__inner architecture-layout">
+        <div class="architecture-heading"><p class="section-kicker">Herramientas y ambiente</p><h2>Las piezas que convierten un modelo en un <em>sistema de trabajo.</em></h2></div>
+        <ol class="architecture-pieces"><li><span>01</span><strong>MCP</strong></li><li><span>02</span><strong>Skills</strong></li><li><span>03</span><strong>Plugins</strong></li><li><span>04</span><strong>Agendamientos</strong></li><li><span>05</span><strong>Hooks</strong></li></ol>
+      </div>`,
+  },
+  {
+    id: 'slide-35',
+    className: 'slide--tech-dark',
+    label: 'MCP conecta al agente con el mundo',
+    html: `
+      <div class="slide__inner tech-detail-layout">
+        <div><p class="section-kicker">Componente 01</p><span class="tech-acronym">MCP</span></div>
+        <div class="tech-detail-copy"><h2>Conecta al agente con <em>herramientas y datos.</em></h2><p>Una forma estandarizada de descubrir y utilizar capacidades externas.</p><small>Definición y ejemplo final pendientes de documentación oficial</small></div>
+      </div>`,
+  },
+  {
+    id: 'slide-36',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Skills convierten experiencia en procedimiento',
+    html: `
+      <div class="slide__inner tech-detail-layout tech-detail-layout--light">
+        <div><p class="section-kicker">Componente 02</p><span class="tech-acronym">Skills</span></div>
+        <div class="tech-detail-copy"><h2>Convierten experiencia en un <em>procedimiento reutilizable.</em></h2><p>Enseñan al agente cómo ejecutar bien un tipo de trabajo.</p><small>Ejemplo concreto por seleccionar</small></div>
+      </div>`,
+  },
+  {
+    id: 'slide-37',
+    className: 'slide--tech-dark',
+    label: 'Plugins reúnen capacidades',
+    html: `
+      <div class="slide__inner tech-detail-layout">
+        <div><p class="section-kicker">Componente 03</p><span class="tech-acronym">Plugins</span></div>
+        <div class="tech-detail-copy"><h2>Reúnen capacidades para un <em>dominio de trabajo.</em></h2><p>Herramientas, skills y aplicaciones distribuidas como un conjunto.</p><small>Ajustar la definición a la plataforma utilizada en la charla</small></div>
+      </div>`,
+  },
+  {
+    id: 'slide-38',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Agendamientos y hooks hacen el trabajo recurrente',
+    html: `
+      <div class="slide__inner triggers-layout">
+        <div class="triggers-heading"><p class="section-kicker">Componentes 04 y 05</p><h2>El trabajo comienza por <em>tiempo</em> o por <em>eventos.</em></h2></div>
+        <div class="trigger-pair"><article><span>Agendamientos</span><strong>Cuando llega el momento</strong><p>Inician objetivos diarios, semanales o periódicos.</p></article><article><span>Hooks</span><strong>Cuando algo sucede</strong><p>Reaccionan a eventos de aplicaciones y sistemas.</p></article></div>
+      </div>`,
+  },
+  {
+    id: 'slide-39',
+    className: 'slide--tech-dark',
+    label: 'Esquema funcional completo',
+    html: `
+      <div class="slide__inner full-system-layout">
+        <div class="full-system-heading"><p class="section-kicker">El sistema completo</p><h2>Un objetivo entra. Un resultado <em>verificable</em> sale.</h2></div>
+        <ol class="full-system-flow" aria-label="Esquema funcional de un agente integrado"><li><span>01</span><strong>Evento u objetivo</strong></li><li><span>02</span><strong>Agente</strong></li><li><span>03</span><strong>Contexto</strong></li><li><span>04</span><strong>Herramientas</strong></li><li><span>05</span><strong>Verificación</strong></li><li><span>06</span><strong>Resultado</strong></li></ol>
+      </div>`,
+  },
+  {
+    id: 'slide-40',
+    className: 'slide--light-extension',
+    theme: 'light',
+    label: 'Demo práctica',
+    html: `
+      <div class="slide__inner live-demo-layout">
+        <div class="live-demo-index">Demo</div>
+        <div class="live-demo-copy"><p class="section-kicker">Objetivo real · punta a punta</p><h2>Ahora, veamos el sistema <em>trabajar.</em></h2><p>Definir objetivo, criterio de éxito, cuenta segura y resultado final precargado.</p></div>
+        <div class="media-placeholder media-placeholder--wide" role="img" aria-label="Placeholder para demostración práctica"><span>Demostración</span><strong>Flujo por definir</strong><small>Versión grabada obligatoria</small></div>
+      </div>`,
+  },
+  {
+    id: 'slide-41',
+    className: 'slide--closing',
+    label: 'El trabajo cambia de forma',
+    html: `
+      <div class="slide__inner closing-layout">
+        <p class="section-kicker">El trabajo cambia de forma</p>
+        <h2>La pregunta ya no es solamente qué podemos hacer con IA.</h2>
+        <p>Es qué trabajo podemos <em>rediseñar junto a ella.</em></p>
+      </div>`,
+  },
+]
+
+deck.insertAdjacentHTML('beforeend', remainingSlides.map((slide, index) => `
+  <section
+    class="slide ${slide.className}"
+    id="${slide.id}"
+    data-slide-index="${index + 13}"
+    ${slide.theme ? `data-theme="${slide.theme}"` : ''}
+    aria-label="Diapositiva ${index + 14} de 42: ${slide.label}"
+  >${slide.html}</section>
+`).join(''))
+
 const slides = [...document.querySelectorAll('.slide:not([hidden])')]
+const progressRail = document.querySelector('.progress-rail')
+progressRail.innerHTML = slides.map((_, index) => `
+  <button class="progress-dot${index === 0 ? ' is-active' : ''}" type="button" data-slide-target="${index}" aria-label="Ir a la diapositiva ${index + 1}"${index === 0 ? ' aria-current="step"' : ''}>
+    <span>${String(index + 1).padStart(2, '0')}</span>
+  </button>
+`).join('')
+
+slides.forEach((slide, index) => {
+  const label = slide.getAttribute('aria-label') || `Diapositiva ${index + 1}`
+  slide.setAttribute('aria-label', label.replace(/Diapositiva \d+ de \d+/, `Diapositiva ${index + 1} de ${slides.length}`))
+})
+
 const dots = [...document.querySelectorAll('.progress-dot')]
 const count = document.querySelector('.slide-count strong')
+const total = document.querySelector('[data-slide-total]')
+total.textContent = String(slides.length).padStart(2, '0')
 const previousButton = document.querySelector('[data-direction="previous"]')
 const nextButton = document.querySelector('[data-direction="next"]')
 const newsSlide = document.querySelector('.slide--news:not([hidden])')
@@ -134,13 +576,14 @@ function startNewsBurst() {
 
 function goTo(index) {
   const nextIndex = clamp(index)
+  const behavior = Math.abs(nextIndex - activeIndex) <= 1 ? 'smooth' : 'instant'
 
   if (nextIndex === newsSlideIndex && activeIndex !== newsSlideIndex) {
     clearBurst()
     syncNews(0)
   }
 
-  slides[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'start' })
+  slides[nextIndex].scrollIntoView({ behavior, block: 'start' })
   syncNavigation(nextIndex)
 }
 
