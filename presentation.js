@@ -1,4 +1,5 @@
 const deck = document.querySelector('.deck')
+const applePaperFigure = new URL('./assets/research/apple-illusion-of-thinking-figure.png', import.meta.url).href
 
 function modesMarkup(unlockedCount, heading, emphasis) {
   const modes = [
@@ -44,19 +45,27 @@ const remainingSlides = [
     id: 'slide-14',
     className: 'slide--light-extension',
     theme: 'light',
-    label: 'Razonar tampoco garantiza consistencia',
+    label: 'Apple pone a prueba los modelos de razonamiento',
     html: `
       <div class="slide__inner evidence-layout">
         <div class="evidence-copy">
-          <p class="section-kicker">Evidencia por incorporar</p>
-          <h2>Razonar tampoco garantiza <em>consistencia.</em></h2>
-          <p>La afirmación final se ajustará a los resultados exactos de la fuente seleccionada.</p>
+          <p class="section-kicker">Apple pone sobre la mesa un límite incómodo</p>
+          <h2>Razonar más no evita el <em>colapso.</em></h2>
+          <p>En <cite>The Illusion of Thinking</cite>, Apple aumenta de forma controlada la complejidad de los problemas y observa un límite claro.</p>
         </div>
-        <div class="media-placeholder media-placeholder--paper" role="img" aria-label="Placeholder para paper de Apple sobre razonamiento o tareas de múltiples pasos">
-          <span>Paper / fuente</span>
-          <strong>Apple · por confirmar</strong>
-          <small>Insertar recorte, título y conclusión verificable</small>
-        </div>
+        <figure class="paper-evidence" aria-label="Paper The Illusion of Thinking de Apple Machine Learning Research">
+          <header>
+            <span>Apple Machine Learning Research</span>
+            <small>NeurIPS · 2025</small>
+          </header>
+          <h3><cite>The Illusion of Thinking</cite></h3>
+          <img src="${applePaperFigure}" alt="Figura del estudio que compara precisión, longitud de respuesta y razonamiento a medida que aumenta la complejidad" />
+          <figcaption>
+            <span>Hallazgo principal</span>
+            <strong>A partir de cierto nivel de complejidad, la precisión colapsa.</strong>
+            <a href="https://machinelearning.apple.com/research/illusion-of-thinking" target="_blank" rel="noreferrer">Fuente: Apple · junio de 2025 ↗</a>
+          </figcaption>
+        </figure>
       </div>`,
   },
   {

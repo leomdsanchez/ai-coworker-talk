@@ -142,10 +142,10 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 
 #### 17 — Razonar tampoco garantiza consistencia
 
-- **Función:** introducir evidencia externa sobre fallos de razonamiento o desempeño multi-step.
-- **Contenido visible provisional:** `Más capacidad de razonamiento no elimina los errores acumulados.`
-- **Visual:** recorte del paper o gráfico original, no una interpretación decorativa.
-- **Pendiente crítico:** confirmar qué paper de Apple respalda exactamente esta afirmación y ajustar el lenguaje a sus resultados reales.
+- **Función:** introducir evidencia externa sobre los límites de los modelos de razonamiento conforme aumenta la complejidad.
+- **Contenido visible:** `Razonar más no evita el colapso.` / `A partir de cierto nivel de complejidad, la precisión colapsa.`
+- **Visual:** título y figura original del paper de Apple.
+- **Fuente confirmada:** [Apple Machine Learning Research, «The Illusion of Thinking», junio de 2025](https://machinelearning.apple.com/research/illusion-of-thinking).
 
 #### 18 — Cada paso depende de los anteriores
 
@@ -331,21 +331,20 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 ## Estado de producción
 
 - **Estructura implementada:** pantallas 01–44, incluida la interacción progresiva de noticias y las cuatro apariciones del mapa de modos.
-- **Con contenido y diseño base:** pantallas 01–16, 18–21, 26–32, 35–42 y 44.
-- **Representadas con placeholder:** pantallas 17, 22–25, 33–34 y 43.
-- **Requieren investigación antes del copy final:** 17, 22–25, 38 y 40.
+- **Con contenido y diseño base:** pantallas 01–21, 26–32, 35–42 y 44.
+- **Representadas con placeholder:** pantallas 22–25, 33–34 y 43.
+- **Requieren investigación antes del copy final:** 22–25, 38 y 40.
 - **Requieren material del presentador:** 21, 33, 34 y 43.
 
 ## Cola de fuentes y materiales
 
 1. Anuncio oficial de ChatGPT y referencia a GPT-3.5.
-2. Paper exacto de Apple y afirmación que realmente permite sostener.
-3. Dataset, metodología y gráficos vigentes de METR.
-4. Método de extrapolación y rango de incertidumbre para el umbral de ocho horas.
-5. Ejemplo de harness del curso de IA aplicada al marketing.
-6. Integración personal para la demostración, con información sensible retirada.
-7. Dos o tres videos de ejemplos externos, con permiso y fallback local.
-8. Documentación oficial vigente de MCP, Skills y Plugins.
+2. Dataset, metodología y gráficos vigentes de METR.
+3. Método de extrapolación y rango de incertidumbre para el umbral de ocho horas.
+4. Ejemplo de harness del curso de IA aplicada al marketing.
+5. Integración personal para la demostración, con información sensible retirada.
+6. Dos o tres videos de ejemplos externos, con permiso y fallback local.
+7. Documentación oficial vigente de MCP, Skills y Plugins.
 
 ## Reglas de producción
 

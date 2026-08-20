@@ -1505,6 +1505,92 @@ body.is-light-slide .navigation-buttons button {
   text-transform: uppercase;
 }
 
+.paper-evidence {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  min-height: clamp(15rem, 52vh, 30rem);
+  margin: 0;
+  padding: clamp(1.2rem, 2.2vw, 2rem);
+  overflow: hidden;
+  border: 1px solid rgba(105, 79, 213, 0.25);
+  color: #242329;
+  background: #fff;
+}
+
+.paper-evidence header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(36, 35, 41, 0.12);
+  color: #694fd5;
+  font-size: 0.56rem;
+  font-weight: 760;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.paper-evidence header small {
+  color: rgba(36, 35, 41, 0.46);
+  font-size: inherit;
+  white-space: nowrap;
+}
+
+.paper-evidence h3 {
+  margin: clamp(0.8rem, 2vh, 1.3rem) 0 0;
+  font-family: Iowan Old Style, Charter, "Palatino Linotype", Georgia, serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.75rem);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.paper-evidence img {
+  width: 100%;
+  min-height: 0;
+  margin: 0.65rem 0;
+  object-fit: contain;
+}
+
+.paper-evidence figcaption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(36, 35, 41, 0.12);
+}
+
+.paper-evidence figcaption span {
+  grid-column: 1 / -1;
+  color: #694fd5;
+  font-size: 0.54rem;
+  font-weight: 760;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.paper-evidence figcaption strong {
+  max-width: 28ch;
+  font-size: clamp(0.82rem, 1.15vw, 1rem);
+  line-height: 1.35;
+}
+
+.paper-evidence figcaption a {
+  align-self: end;
+  color: rgba(36, 35, 41, 0.48);
+  font-size: 0.56rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: right;
+  text-decoration: none;
+}
+
+.paper-evidence figcaption a:hover,
+.paper-evidence figcaption a:focus-visible {
+  color: #694fd5;
+}
+
 .process-layout {
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -2857,6 +2943,42 @@ body.is-light-slide .navigation-buttons button {
     left: 1.15rem;
   }
 
+  .paper-evidence {
+    min-height: 0;
+    height: 15.5rem;
+    padding: 1rem;
+  }
+
+  .paper-evidence header {
+    padding-bottom: 0.55rem;
+    font-size: 0.48rem;
+  }
+
+  .paper-evidence h3 {
+    margin-top: 0.6rem;
+    font-size: 1.45rem;
+  }
+
+  .paper-evidence img {
+    height: 6.8rem;
+    margin: 0.4rem 0;
+  }
+
+  .paper-evidence figcaption {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding-top: 0.55rem;
+  }
+
+  .paper-evidence figcaption span,
+  .paper-evidence figcaption a {
+    font-size: 0.48rem;
+  }
+
+  .paper-evidence figcaption a {
+    text-align: left;
+  }
+
   .process-chain,
   .harness-loop,
   .full-system-flow {
@@ -3139,6 +3261,64 @@ body.is-light-slide .navigation-buttons button {
   .current-use-flow small,
   .current-use-figure figcaption {
     font-size: 0.62rem;
+  }
+
+  .evidence-layout {
+    grid-template-columns: minmax(0, 0.78fr) minmax(24rem, 1.22fr);
+    gap: 2rem;
+    align-items: center;
+    min-height: calc(100dvh - 5.2rem);
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .evidence-copy h2 {
+    max-width: 10ch;
+    font-size: clamp(2.5rem, 6vw, 3.2rem);
+  }
+
+  .evidence-copy > p:last-child {
+    display: none;
+  }
+
+  .paper-evidence {
+    min-height: 0;
+    height: 13rem;
+    padding: 0.8rem;
+  }
+
+  .paper-evidence header {
+    padding-bottom: 0.4rem;
+    font-size: 0.44rem;
+  }
+
+  .paper-evidence h3 {
+    margin-top: 0.4rem;
+    font-size: 1.25rem;
+  }
+
+  .paper-evidence img {
+    height: 6rem;
+    margin: 0.25rem 0;
+  }
+
+  .paper-evidence figcaption {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding-top: 0.35rem;
+  }
+
+  .paper-evidence figcaption span {
+    font-size: 0.42rem;
+  }
+
+  .paper-evidence figcaption strong {
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+
+  .paper-evidence figcaption a {
+    display: none;
   }
 
   .news-layout {
