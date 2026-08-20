@@ -166,14 +166,15 @@ const remainingSlides = [
         <div class="harness-copy">
           <p class="section-kicker">Una estructura alrededor del modelo</p>
           <h2>Entra el <em>harness.</em></h2>
-          <p>El modelo propone. El sistema organiza, ejecuta, observa, verifica y recupera.</p>
+          <p>El sistema conserva el contexto, planifica, actúa, observa, ajusta y entrega.</p>
         </div>
-        <ol class="harness-loop" aria-label="Flujo simplificado de un harness">
-          <li><span>01</span><strong>Objetivo</strong></li>
+        <ol class="harness-loop" aria-label="Flujo del harness desde el contexto hasta la entrega">
+          <li><span>01</span><strong>Contexto</strong></li>
           <li><span>02</span><strong>Plan</strong></li>
           <li><span>03</span><strong>Acción</strong></li>
           <li><span>04</span><strong>Observación</strong></li>
-          <li><span>05</span><strong>Verificación</strong></li>
+          <li><span>05</span><strong>Ajuste</strong></li>
+          <li><span>06</span><strong>Entrega</strong></li>
         </ol>
       </div>`,
   },

@@ -170,8 +170,8 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 #### 21 — Entra el harness
 
 - **Función:** presentar la capa que estructura y sostiene el trabajo del agente.
-- **Contenido visible:** `El modelo propone. El harness organiza, ejecuta, verifica y recupera.`
-- **Flujo base:** objetivo → plan → herramienta → observación → verificación → siguiente paso.
+- **Contenido visible:** `El sistema conserva el contexto, planifica, actúa, observa, ajusta y entrega.`
+- **Flujo base:** contexto → plan → acción → observación → ajuste → entrega.
 - **Material pendiente:** adaptar el ejemplo utilizado en el curso de IA aplicada al marketing.
 
 ### Acto IV — De tareas a objetivos

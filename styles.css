@@ -3613,6 +3613,31 @@ body.is-light-slide .navigation-buttons button {
     font-size: 0.65rem;
   }
 
+  .harness-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
+    gap: 2rem;
+    min-height: calc(100dvh - 5.2rem);
+    padding: 2.5rem 3rem 0 0;
+  }
+
+  .harness-copy h2 {
+    margin: 0.4rem 0 0.8rem;
+    font-size: clamp(3rem, 6.6vw, 3.5rem);
+  }
+
+  .harness-copy > p:last-child {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .harness-loop li {
+    padding-bottom: 0.55rem;
+  }
+
+  .harness-loop strong {
+    font-size: 1.45rem;
+  }
+
   .news-layout {
     padding-top: 3rem;
     padding-bottom: 3.5rem;
