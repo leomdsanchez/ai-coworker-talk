@@ -126,7 +126,7 @@ export function OpeningPage() {
         >
           <div className="slide__inner statement-layout">
             <p className="statement">
-              En los próximos años me atrevo a decir que la IA será quien ejecute{' '}
+              En los próximos años la IA será quien ejecute{' '}
               <em>gran parte del trabajo.</em>
             </p>
             <div className="slide-legend">

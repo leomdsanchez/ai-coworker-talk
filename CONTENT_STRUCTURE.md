@@ -48,7 +48,7 @@ En cada aparición, las etapas futuras permanecen punteadas y sin nombre. La lí
 #### 03 — Gran parte del trabajo
 
 - **Función:** aumentar la apuesta y crear tensión.
-- **Contenido visible:** `En los próximos años me atrevo a decir que la IA será quien ejecute gran parte del trabajo.`
+- **Contenido visible:** `En los próximos años la IA será quien ejecute gran parte del trabajo.`
 - **Estado:** implementada.
 
 #### 04 — Todo está cambiando
